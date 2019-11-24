@@ -4,6 +4,7 @@ import ContactItems from './components/ContactItems'
 import Header from './components/Header'
 import { Switch, Route } from 'react-router-dom'
 import Offer from './components/Pages/Offer'
+import Portfolio from './components/Pages/Portfolio'
 
 export class App extends Component {
   render() {
@@ -27,12 +28,16 @@ export class App extends Component {
               <Route path='/offer'>
                 <Offer />
               </Route>
+              <Route path='/portfolio'>
+                <Portfolio />
+              </Route>
   
             </Switch>
   
           </main>
           <footer className={window.location.pathname === '/' ? 'footerTransparent' : undefined}>
             <ContactItems />
+            <p>website designed by <a href="https://www.webble.pl" target='blank'>webble.</a></p>
           </footer>
         </div>
   

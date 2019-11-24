@@ -6,9 +6,25 @@ export class Offer extends Component {
     render() {
         return (
             <div className='offerContainer'>
-                <Banner />
+                <Banner section='Nasza oferta' button='Czytaj dalej' />
                 <div className="content">
-                    <p>dupa</p>
+                    <div className="offerItemsContainer">
+                        <div className="offerItem">
+                            A
+                        </div>
+                        <div className="offerItem">
+                            B
+                        </div>
+                        <div className="offerItem">
+                            C
+                        </div>
+                        <div className="offerItem">
+                            D
+                        </div>
+                        <div className="offerItem">
+                            E
+                        </div>
+                    </div>
                 </div>
             </div>
         )

@@ -8,6 +8,19 @@ a {
 
 .bgSpaceStation{
   background-image: url('https://www.digitalarch.pl/static/media/DA_1704_Phobos_01.903d5835.jpg') !important;
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #030303;
+    animation: overlayAnim 0.5s ease-in forwards;
+    z-index: 1 !important;
+
+
+  }
 }
 
 .App {
@@ -20,7 +33,14 @@ a {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #03030388;
+    opacity: 1;
+  }
+
+}
+
+@keyframes overlayAnim {
+  to {
+    opacity: 0.52;
   }
 }
 
@@ -33,6 +53,9 @@ header, footer {
 }
 
 header{
+  &.headerDark {
+    background-color: #03030381;
+  }
   & * {
     font-family: 'Quicksand', sans-serif;
   }
@@ -113,6 +136,8 @@ main {
     animation: landingText 1.5s normal forwards 2s;
     position: relative;
     //////////
+    z-index: 50;
+
     color: white;
     text-align: left;
     width: 500px;
@@ -187,6 +212,16 @@ footer {
         }
         display: flex;
         align-items: center;
+      }
+    }
+  }
+  p {
+    opacity: 0.8;
+    font-size: 0.8rem;
+    a {
+      font-family: 'Righteous';
+      &:hover {
+        color: $accentRed;
       }
     }
   }

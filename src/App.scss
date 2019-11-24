@@ -1,0 +1,183 @@
+$accentRed: #f35C2B;
+$accentRedTransp: #f35C2B00;
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-image: url('https://www.digitalarch.pl/static/media/DA_1704_Phobos_01.903d5835.jpg');
+  background-size: cover;
+  background-position: center;
+  .bgOverlay {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #03030388;
+  }
+}
+
+header, footer {
+  font-family: 'Quicksand', sans-serif;
+  padding: 8px 96px;
+  color: #f5f5f5;
+  font-weight: 200;
+}
+
+header{
+  & * {
+    font-family: 'Quicksand', sans-serif;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .logoContainer {
+    flex: 1;
+    img {
+      height: 48px;
+      filter: invert(1);
+      opacity: 1;
+      animation: headerItem 1s ease-in forwards;
+
+    }
+  }
+  nav {
+    flex: 5;
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      li  {
+
+        @for $i from 1 to 8 {
+          &:nth-child(#{$i}) {
+            animation: headerItem 0.5s ease-in #{$i * .1 + 0.5}s forwards;
+          }
+        }
+        opacity: 0;
+        margin: 0px 8px;
+        padding: 4px 16px;
+        border: 0.5px solid $accentRedTransp;
+        border-radius: 6px;
+        transition: border 0.3s ease-in-out;
+        &.langSelection {
+          border: 1px solid #f5f5f5;
+        }
+        &:hover {
+          border: 0.5px solid $accentRed;
+          cursor: pointer;
+        }
+      }
+    }
+
+  }
+}
+
+main {
+  ///ANIMATION DATA
+  opacity: 0;
+  top: -24px;
+  animation: landingText 1.5s normal forwards 2s;
+  position: relative;
+  //////////
+  flex: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 96px;
+  .windowContainer {
+    color: white;
+    text-align: left;
+    width: 500px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    *{
+      width: 100%;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1.3rem;
+    }
+    h2, h3 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      &>span {
+        font-weight: 600;
+      }
+    }
+    p {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 200;
+      text-align: justify;
+    }
+    button {
+      margin: 24px 0px;
+      border: 1px solid $accentRed;
+      background: #f35d2b00;
+      color: $accentRed;
+      font-size: 1.1rem;
+      font-family: 'Quicksand', sans-serif;
+      padding: 6px;
+      border-radius: 8px;
+      width: 70%;
+      transition-property: background, color;
+      transition-duration: 0.3s, 0.3s;
+      &:hover {
+        background: $accentRed;
+        color: #f5f5f5;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+footer {
+  .contactItemsContainer {
+    ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      li {
+        margin: 0px 24px;
+        img {
+          display: inline-block;
+          height: 20px;
+          margin: 12px;
+        }
+        a {
+          &:hover {
+            color: $accentRed;
+          }
+        }
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+////// ANIMATIONS //////
+@keyframes headerItem {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes landingText {
+  to {
+    opacity: 1;
+    top: 0px;
+  }
+}
+

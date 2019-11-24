@@ -6,12 +6,16 @@ a {
   color: inherit;
 }
 
+.bgSpaceStation{
+  background-image: url('https://www.digitalarch.pl/static/media/DA_1704_Phobos_01.903d5835.jpg') !important;
+}
+
 .App {
   text-align: center;
   min-height: 100vh;
-  background-image: url('https://www.digitalarch.pl/static/media/DA_1704_Phobos_01.903d5835.jpg');
   background-size: cover;
   background-position: center;
+  background-color: #ffffff;
   .bgOverlay {
     min-height: 100vh;
     display: flex;
@@ -25,22 +29,39 @@ header, footer {
   padding: 8px 96px;
   color: #f5f5f5;
   font-weight: 200;
+  z-index: 90;
 }
 
 header{
   & * {
     font-family: 'Quicksand', sans-serif;
   }
+  position: absolute;
+  top: 0px;
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   .logoContainer {
     flex: 1;
+    display: flex;
+    align-items: center;
+    animation: headerItem 1s ease-in forwards;
+    opacity: 1;
+
+    & *{
+      display: flex;
+      align-items: center;
+      font-family: 'Open Sans', sans-serif !important;
+      font-size: 2.4rem;
+    }
+    span {
+      font-weight: 600;
+    }
     img {
       height: 48px;
-      filter: invert(1);
-      opacity: 1;
-      animation: headerItem 1s ease-in forwards;
+      margin-right: 16px;
 
     }
   }
@@ -62,13 +83,16 @@ header{
         padding: 4px 16px;
         border: 0.5px solid $accentRedTransp;
         border-radius: 6px;
-        transition: border 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out;
         &.langSelection {
           border: 1px solid #f5f5f5;
         }
         &:hover {
-          border: 0.5px solid $accentRed;
+          color: $accentRed;
           cursor: pointer;
+        }
+        .navActive {
+          color: $accentRed;
         }
       }
     }
@@ -77,18 +101,18 @@ header{
 }
 
 main {
-  ///ANIMATION DATA
-  opacity: 0;
-  top: -24px;
-  animation: landingText 1.5s normal forwards 2s;
-  position: relative;
-  //////////
+
   flex: auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 96px;
   .windowContainer {
+    ///ANIMATION DATA
+    opacity: 0;
+    top: -24px;
+    animation: landingText 1.5s normal forwards 2s;
+    position: relative;
+    //////////
     color: white;
     text-align: left;
     width: 500px;
@@ -117,9 +141,9 @@ main {
       font-family: 'Open Sans', sans-serif;
       font-weight: 200;
       text-align: justify;
+      margin-bottom: 24px;
     }
     button {
-      margin: 24px 0px;
       border: 1px solid $accentRed;
       background: #f35d2b00;
       color: $accentRed;
@@ -127,7 +151,6 @@ main {
       font-family: 'Quicksand', sans-serif;
       padding: 6px;
       border-radius: 8px;
-      width: 70%;
       transition-property: background, color;
       transition-duration: 0.3s, 0.3s;
       &:hover {
@@ -136,10 +159,15 @@ main {
         cursor: pointer;
       }
     }
+
   }
 }
 
+.footerTransparent {
+  background-color: #00000000 !important;
+}
 footer {
+  background-color: #3B3A49;
   .contactItemsContainer {
     ul {
       display: flex;

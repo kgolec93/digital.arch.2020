@@ -1,22 +1,69 @@
+$accentRed: #f35C2B;
+
+
 .portfolioContainer {
+    .portfolioMenu {
+        padding: 16px 0px;
+        padding-top: 32px;
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            li {
+                font-family: 'Quicksand', sans-serif;
+                margin: 0px 6px;
+                padding: 4px 12px;
+                border: 1px solid rgb(160, 160, 160);
+                border-radius: 4px;
+                transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+                &:hover {
+                    color: $accentRed;
+                    border-color: $accentRed;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
     .portfolioItemsContainer {
         margin: 0px auto;
         width: 80%;
         display: grid;
         grid-template-columns: 33% 33% 33%;
-        grid-template-rows: repeat(5, 350px);
+        grid-template-rows: repeat(10, 350px);
         
+
         .portfolioItem {
             opacity: 0;
             margin: 16px;
             background-color: #8d8d8d;
             &.portfolioAnim {
-                @for $i from 1 to 8 {
+                @for $i from 1 to 25 {
                     &:nth-child(#{$i}) {
-                      animation: headerItem 0.5s ease-in #{$i * .1 + 0.5}s forwards;
+                      animation: headerItem 0.5s ease-in #{$i * .2 + 0.2}s forwards;
                     }
                 }
             }
+            position: relative;
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                z-index: 99;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(196, 39, 39, 0.582);
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+            &:hover {
+                cursor: pointer;
+                &::after {
+                    opacity: 1;
+                }
+            }
+            z-index: 10;
 
             &:nth-child(2){
                 grid-column-start: 2;
@@ -35,6 +82,13 @@
                 grid-row-start: 3;
                 grid-row-end: 5;
             }
+            img {
+                width: 100%;
+                height:100%;
+                object-fit: cover;
+
+            }
+
         }
     }
 }

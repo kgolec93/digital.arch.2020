@@ -59,8 +59,9 @@ header{
   & * {
     font-family: 'Quicksand', sans-serif;
   }
-  position: absolute;
+  position: fixed;
   top: 0px;
+  left: 0px;
   width: 100%;
 
   display: flex;
@@ -142,6 +143,7 @@ main {
     text-align: left;
     width: 500px;
     padding: 24px;
+    margin-right: 12vw;
     display: flex;
     flex-direction: column;
     justify-content: center;

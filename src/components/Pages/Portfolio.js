@@ -3,10 +3,6 @@ import Banner from '../Elements/Banner'
 import './Portfolio.scss'
 import * as Scroll from 'react-scroll';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import img01 from '../../assets/test-img/01.png'
-import img02 from '../../assets/test-img/02.png'
-import img03 from '../../assets/test-img/03.png'
-import img04 from '../../assets/test-img/04.png'
 
 const data = [
     'https://www.digitalarch.pl/static/media/88.7f6c38f6.jpg',

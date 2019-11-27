@@ -2,9 +2,31 @@ import React, { Component } from 'react'
 
 
 export class Header extends Component {
+    constructor() {
+        super();
+        this.state = {
+            headerIsStatic: false
+        }
+    }
+    componentDidMount() {
+        window.addEventListener('scroll', this.listenToScroll)
+    }
+
+    listenToScroll = () => {
+        if (window.pageYOffset >= window.innerHeight-68 ) {
+            this.setState({ headerIsStatic: true })
+        }
+        else {
+            this.setState({ headerIsStatic: false })
+
+        }
+    }
+
     render() {
         return (
-            <header className={window.location.pathname === '/' ? 'header' : 'header headerDark'}>
+            <header className={
+                this.state.headerIsStatic ? 'headerStatic' : null
+                }>
                 <div className="logoContainer">
                     <a href='/'>
                         <img src='https://www.digitalarch.pl/static/media/digitalarch-logo.232d5c1f.svg' alt="digital.ARCH logo" />

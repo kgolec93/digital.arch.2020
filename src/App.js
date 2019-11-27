@@ -4,7 +4,7 @@ import ContactItems from './components/ContactItems'
 import Header from './components/Header'
 import { Switch, Route } from 'react-router-dom'
 import Offer from './components/Pages/Offer'
-import Portfolio from './components/Pages/Portfolio'
+import Portfolio from './components/Pages/Portfolio/Portfolio'
 
 export class App extends Component {
   render() {

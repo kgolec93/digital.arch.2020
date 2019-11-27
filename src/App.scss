@@ -53,8 +53,16 @@ header, footer {
 }
 
 header{
+  transition: background-color 0.5s ease-in-out;
   &.headerDark {
     background-color: #03030381;
+  }
+
+  &.headerStatic {
+    position: fixed !important;
+    top: 0;
+    background-color: #030303e0;
+
   }
   & * {
     font-family: 'Quicksand', sans-serif;

@@ -4,6 +4,22 @@ import * as Scroll from 'react-scroll';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 export class Banner extends Component {
+    constructor(){
+        super();
+        this.state={
+            isVisible: true
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.listenToScroll)
+    }
+
+    listenToScroll = () => {
+        if (window.pageYOffset >= window.innerHeight-68 ) {
+            this.setState({ isVisible: false })
+        }
+    }
 
     scrollFunc = () => {
         scroller.scrollTo('content', {

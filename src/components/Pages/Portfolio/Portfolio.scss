@@ -89,7 +89,7 @@ $accentRed: #f35C2B;
         width: 80%;
         display: grid;
         grid-template-columns: 33% 33% 33%;
-        grid-template-rows: repeat(10, 350px);
+        grid-template-rows: repeat(10, 300px);
         
         .portfolio-all {
             @include itemGlobals();

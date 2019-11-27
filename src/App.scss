@@ -55,13 +55,13 @@ header, footer {
 header{
   transition: background-color 0.5s ease-in-out;
   &.headerDark {
-    background-color: #03030381;
+    background-color: #030303;
   }
 
   &.headerStatic {
     position: fixed !important;
     top: 0;
-    background-color: #030303e0;
+    background-color: #030303;
 
   }
   & * {

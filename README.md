@@ -3,5 +3,7 @@
 digital.ARCH Visualization company new website (basing on the 2019 version)
 
 ### Technologies:
+- HTML5 + CSS (Sass)
 - React
-- React Snapshot
+- React-snapshot
+- React-scroll

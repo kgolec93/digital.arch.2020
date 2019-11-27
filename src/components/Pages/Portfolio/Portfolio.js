@@ -38,9 +38,13 @@ export class Portfolio extends Component {
         }
     }
 
+    componentDidMount(){
+        this.setState({active: window.location.hash.substr(1)})
+    }
+
     scrollFunc = () => {
         scroller.scrollTo('content', {
-            duration: 1000,
+            duration: 500,
             delay: 0,
             smooth: true,
             offset: -68, // Scrolls to element + 50 pixels down the page
@@ -56,7 +60,7 @@ export class Portfolio extends Component {
                             {menuItems.map(i=>{
                                 return(
                                     <a href={`#${i.id}`}><li 
-                                        className={this.state.active===i.id ? 'active' : null}
+                                        className={this.state.active === i.id ? 'active' : null}
                                         id={i.id} 
                                         onClick={(e)=>{
                                                 this.setState({active:e.target.id, uuid: uuidv1()});

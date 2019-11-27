@@ -125,7 +125,7 @@ export class PortfolioItems extends Component {
     }
 
     listenToScroll = () => {
-        if (this.state.animateItems === false) {
+        if (this.state.animateItems !== true) {
             if (window.innerWidth > 1200) { ///width set up to RWD - value to be set later
                 if (window.pageYOffset >= window.innerHeight - 100) {
                     this.setState({ animateItems: true })
@@ -137,7 +137,7 @@ export class PortfolioItems extends Component {
     render() {
         return (
             <div key={this.props.uuid} className={`portfolio-${window.location.hash.substr(1)} portfolioItemsContainer`}>
-                {window.location.hash.substr(1) !== 'all' ?
+                {window.location.hash.substr(1) !== '' && window.location.hash.substr(1) !== 'all'?
                     images.filter((i) => {
                         return i.type === window.location.hash.substr(1)
                     }).map(i => {

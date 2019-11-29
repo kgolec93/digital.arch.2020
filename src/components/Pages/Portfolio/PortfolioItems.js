@@ -6,109 +6,189 @@ import {v1 as uuidv1} from 'uuid';
 
 const images = [
     {
-        url: 'https://www.digitalarch.pl/static/media/88.7f6c38f6.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/01.jpg',
         alt: 'alt1',
         type: 'arch',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/85.77b6115c.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/02.jpg',
+        alt: 'alt1',
+        type: 'interior',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/03.jpg',
         alt: 'alt1',
         type: 'arch',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/93.dade5f43.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/04.jpg',
         alt: 'alt1',
-        type: 'interior',
+        type: 'arch',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/90.3b399738.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/05.jpg',
         alt: 'alt1',
-        type: 'interior',
+        type: 'arch',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/58.f6f1ba2c.jpg',
-        alt: 'alt1',
-        type: 'product',
-    },
-    {
-        url: 'https://www.digitalarch.pl/static/media/40.ba7a1da5.jpg',
-        alt: 'alt1',
-        type: 'product',
-    },
-    {
-        url: 'https://www.digitalarch.pl/static/media/64.103447f6.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/06.jpg',
         alt: 'alt1',
         type: 'special',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/88.7f6c38f6.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/static/media/85.77b6115c.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/static/media/93.dade5f43.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/07.jpg',
         alt: 'alt1',
         type: 'interior',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/90.3b399738.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/08.jpg',
+        alt: 'alt1',
+        type: 'product',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/09.jpg',
         alt: 'alt1',
         type: 'interior',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/58.f6f1ba2c.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/10.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/11.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/12.jpg',
         alt: 'alt1',
         type: 'product',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/40.ba7a1da5.jpg',
-        alt: 'alt1',
-        type: 'product',
-    },
-    {
-        url: 'https://www.digitalarch.pl/static/media/64.103447f6.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/13.jpg',
         alt: 'alt1',
         type: 'special',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/88.7f6c38f6.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/14.jpg',
         alt: 'alt1',
         type: 'arch',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/85.77b6115c.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/15.jpg',
+        alt: 'alt1',
+        type: 'interior',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/16.jpg',
         alt: 'alt1',
         type: 'arch',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/93.dade5f43.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/17.jpg',
         alt: 'alt1',
         type: 'interior',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/90.3b399738.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/18.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/19.jpg',
+        alt: 'alt1',
+        type: 'product',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/20.jpg',
         alt: 'alt1',
         type: 'interior',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/58.f6f1ba2c.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/21.jpg',
         alt: 'alt1',
         type: 'product',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/40.ba7a1da5.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/22.jpg',
         alt: 'alt1',
-        type: 'product',
+        type: 'interior',
     },
     {
-        url: 'https://www.digitalarch.pl/static/media/64.103447f6.jpg',
+        url: 'https://www.digitalarch.pl/resources/thumbnails/23.jpg',
+        alt: 'alt1',
+        type: 'interior',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/24.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/25.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/26.jpg',
+        alt: 'alt1',
+        type: 'interior',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/27.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/28.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/29.jpg',
         alt: 'alt1',
         type: 'special',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/30.jpg',
+        alt: 'alt1',
+        type: 'product',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/31.jpg',
+        alt: 'alt1',
+        type: 'interior',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/32.jpg',
+        alt: 'alt1',
+        type: 'product',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/33.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/34.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/35.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/36.jpg',
+        alt: 'alt1',
+        type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/37.jpg',
+        alt: 'alt1',
+        type: 'interior',
     },
 ]
 
@@ -136,13 +216,13 @@ export class PortfolioItems extends Component {
     }
     render() {
         return (
-            <div key={this.props.uuid} className={`portfolio-${window.location.hash.substr(1)} portfolioItemsContainer`}>
-                {window.location.hash.substr(1) !== '' && window.location.hash.substr(1) !== 'all'?
+            <div key={this.props.uuid} className={`portfolio-${this.props.active} portfolioItemsContainer`}>
+                {this.props.active !== '' && this.props.active !== 'all'?
                     images.filter((i) => {
-                        return i.type === window.location.hash.substr(1)
+                        return i.type === this.props.active
                     }).map(i => {
                         return (
-                            <div className={this.state.animateItems ? `portfolio-${window.location.hash.substr(1)} portfolioAnim` : `portfolio-${window.location.hash.substr(1)}`} >
+                            <div className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`} >
                                 <img src={i.url} alt={i.url} />
                             </div>
                         )

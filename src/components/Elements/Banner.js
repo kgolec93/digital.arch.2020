@@ -22,7 +22,7 @@ export class Banner extends Component {
     }
 
     scrollFunc = () => {
-        scroller.scrollTo('content', {
+        scroll.scrollTo(window.innerHeight-68, {
             duration: 1000,
             delay: 0,
             smooth: true,

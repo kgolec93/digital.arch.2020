@@ -33,6 +33,7 @@ export class Portfolio extends Component {
     constructor() {
         super();
         this.state = {
+            pageOffset: 0,
             active: 'all',
             uuid: ''
         }
@@ -40,39 +41,49 @@ export class Portfolio extends Component {
 
     componentDidMount(){
         this.setState({active: window.location.hash.substr(1)})
+        window.addEventListener('scroll', this.listenToScroll);
+
+    }
+
+
+    listenToScroll = (e) => {
+        if (this.state.pageOffset == 0) {
+            this.scrollFunc();
+            this.setState({pageOffset: window.pageYOffset})
+        }
     }
 
     scrollFunc = () => {
-        scroller.scrollTo('content', {
-            duration: 500,
-            delay: 0,
-            smooth: true,
-            offset: -68, // Scrolls to element + 50 pixels down the page
-          })
+        scroll.scrollTo(window.innerHeight-68);
     }
+
     render() {
         return (
             <div className='portfolioContainer'>
+                
                 <Banner section="Wybrane relizacje" button='Zobacz nasze portfolio' />
-                <Element name='content' className="content">
-                    <div className="portfolioMenu">
-                        <ul>
-                            {menuItems.map(i=>{
-                                return(
-                                    <a href={`#${i.id}`}><li 
-                                        className={this.state.active === i.id ? 'active' : null}
-                                        id={i.id} 
-                                        onClick={(e)=>{
-                                                this.setState({active:e.target.id, uuid: uuidv1()});
-                                                this.scrollFunc();
-                                            }}
-                                    >{i.name}</li></a>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    <PortfolioItems uuid={this.state.active} active={this.state.active}/>
-                </Element>
+
+                <div className="portfolioMenu">
+                    <ul>
+                        {menuItems.map(i=>{
+                            return(
+                                <li 
+                                    className={this.state.active === i.id ? 'active' : null}
+                                    id={i.id} 
+                                    onClick={(e)=>{
+                                            this.scrollFunc();
+                                            this.setState({active:e.target.id, uuid: uuidv1()});
+                                        }}
+                                >{i.name}</li>
+                            )
+                        })}
+                    </ul>
+
+                </div>
+
+                <PortfolioItems uuid={this.state.active} active={this.state.active}/>
+
+
             </div>
         )
     }

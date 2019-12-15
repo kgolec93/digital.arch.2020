@@ -254,3 +254,32 @@ footer {
   }
 }
 
+//////////////////////////
+////// TEST POLIGON //////
+//////////////////////////
+
+.test {
+  display: flex;
+  flex-wrap: wrap;
+  .item {
+    border: 1px solid red;
+    width: 24vw;
+    height: 20vw;
+    transition: width 1s ease-in;
+    position: relative;
+    &.hidden {
+      animation: test 0.4s ease-in forwards;
+    }
+  }
+}
+
+@keyframes test {
+  90% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0);
+    width: 0;
+
+  }
+}

@@ -11,14 +11,14 @@ const images = [
         type: 'arch',
     },
     {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/02.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
         url: 'https://www.digitalarch.pl/resources/thumbnails/03.jpg',
         alt: 'alt1',
         type: 'arch',
+    },
+    {
+        url: 'https://www.digitalarch.pl/resources/thumbnails/02.jpg',
+        alt: 'alt1',
+        type: 'interior',
     },
     {
         url: 'https://www.digitalarch.pl/resources/thumbnails/04.jpg',

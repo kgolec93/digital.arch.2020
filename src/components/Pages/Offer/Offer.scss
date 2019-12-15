@@ -1,0 +1,46 @@
+.offerContainer {
+    min-height: 100vh;
+    min-width: 100vw;
+    .offerItemsContainer {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        .offerSection {
+            min-height: 35vh;
+            margin-top: 8px;
+            flex: 1;
+            position: relative;
+
+            &:nth-child(2n+1){
+                background-color: rgb(126, 126, 126);
+            }
+            .offerItem {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: 50% 50%;
+
+                }
+                .textContainer {
+                    background-color: #0303039d;
+                    color: white;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 40%;
+                    .header {
+                        font-size: 2rem;
+                        font-family: 'Raleway', sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}

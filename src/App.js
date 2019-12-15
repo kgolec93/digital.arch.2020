@@ -3,8 +3,9 @@ import './App.scss';
 import ContactItems from './components/ContactItems'
 import Header from './components/Header'
 import { Switch, Route } from 'react-router-dom'
-import Offer from './components/Pages/Offer'
+import Offer from './components/Pages/Offer/Offer'
 import Portfolio from './components/Pages/Portfolio/Portfolio'
+import TEST_COMPONENT from './components/TEST_COMPONENT'
 
 export class App extends Component {
   render() {
@@ -30,6 +31,9 @@ export class App extends Component {
               </Route>
               <Route path='/portfolio'>
                 <Portfolio />
+              </Route>              
+              <Route path='/test'>
+                <TEST_COMPONENT />
               </Route>
   
             </Switch>

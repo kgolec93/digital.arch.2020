@@ -40,9 +40,7 @@ export class Portfolio extends Component {
     }
 
     componentDidMount(){
-        this.setState({active: window.location.hash.substr(1)})
         window.addEventListener('scroll', this.listenToScroll);
-
     }
 
 

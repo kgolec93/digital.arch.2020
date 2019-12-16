@@ -38,8 +38,8 @@ export class Header extends Component {
                     <ul>
                         <li><a href='/offer'>oferta</a></li>
                         <li><a href='/portfolio'> portfolio</a></li>
-                        <li>o nas</li>
-                        <li>kontakt</li>
+                        <li><a href='/about'>o nas</a></li>
+                        <li><a href='/contact'>kontakt</a></li>
                         <li>FAQ</li>
                         {/* <li className="langSelection">ENG</li> */}
                     </ul>

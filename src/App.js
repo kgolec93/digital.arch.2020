@@ -7,6 +7,8 @@ import Offer from './components/Pages/Offer/Offer'
 import Portfolio from './components/Pages/Portfolio/Portfolio'
 import TEST_COMPONENT from './components/TEST_COMPONENT'
 import { sections } from './components/Pages/Offer/Offer'
+import { About } from './components/Pages/About/About';
+import { Contact } from './components/Pages/Contact/Contact';
 
 export class App extends Component {
   render() {
@@ -32,11 +34,13 @@ export class App extends Component {
               </Route>
               <Route path='/portfolio'>
                 <Portfolio />
-              </Route>              
-              <Route path='/test'>
-                <TEST_COMPONENT />
+              </Route>    
+              <Route path='/about'>
+                <About />
               </Route>
-  
+              <Route path='/contact'>
+                <Contact />
+              </Route>      
             </Switch>
   
           </main>

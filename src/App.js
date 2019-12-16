@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom'
 import Offer from './components/Pages/Offer/Offer'
 import Portfolio from './components/Pages/Portfolio/Portfolio'
 import TEST_COMPONENT from './components/TEST_COMPONENT'
+import { sections } from './components/Pages/Offer/Offer'
 
 export class App extends Component {
   render() {
@@ -26,7 +27,7 @@ export class App extends Component {
                   <a href='/offer'><button>Poznaj naszą ofertę!</button></a>
                 </div>
               </Route>
-              <Route path='/offer'>
+              <Route exact path='/offer'>
                 <Offer />
               </Route>
               <Route path='/portfolio'>

@@ -216,7 +216,7 @@ export class PortfolioItems extends Component {
     }
     render() {
         return (
-            <div key={this.props.uuid} className={`portfolio-${this.props.active} portfolioItemsContainer`}>
+            <div key={this.props.uuid} className={`portfolio-${this.props.active}-container portfolioItemsContainer`}>
                 {this.props.active !== '' && this.props.active !== 'all'?
                     images.filter((i) => {
                         return i.type === this.props.active

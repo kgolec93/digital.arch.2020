@@ -7,7 +7,7 @@ import scrollLock from 'scroll-lock';
 import * as Scroll from 'react-scroll';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
-const sections = [
+export const sections = [
     {
         name: 'Wizualizacje architektoniczne',
         refName: 'wizArchi',
@@ -49,7 +49,8 @@ export class Offer extends Component {
     constructor() {
         super();
         this.state = {
-            isInit: true
+            isInit: true,
+            active: ''
         }
     }
 
@@ -58,6 +59,10 @@ export class Offer extends Component {
             scroll.scrollTo(window.innerHeight - 68);
             this.setState({isInit: false})
         }
+    }
+
+    setActive = (param) => {
+        this.setState({active: param})
     }
 
     render() {
@@ -69,7 +74,7 @@ export class Offer extends Component {
                         {sections.map(item => {
                             return (
                                 <div key={item.refName} className="offerSection">
-                                    <OfferSection data={item} />
+                                    <OfferSection setActive={this.setActive} active={this.state.active} data={item} />
                                 </div>
                             )
                         })}

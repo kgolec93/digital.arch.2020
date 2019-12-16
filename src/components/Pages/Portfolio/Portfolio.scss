@@ -95,7 +95,15 @@ $accentRed: #f35C2B;
         width: 80%;
         display: grid;
         grid-template-columns: 33% 33% 33%;
-        grid-template-rows: repeat(21, 320px);
+        &.portfolio-all-container {
+            grid-template-rows: repeat(21, 320px);
+        }
+        &.portfolio-arch-container {
+            grid-template-rows: repeat(9, 320px);
+        }
+        &.portfolio-interior-container {
+            grid-template-rows: repeat(8, 320px);
+        }
         
         .portfolio-all {
             @include itemGlobals();

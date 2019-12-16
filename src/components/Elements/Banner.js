@@ -37,6 +37,7 @@ export class Banner extends Component {
                     <h1>{this.props.section}</h1>
                     <div onClick={this.scrollFunc}>{this.props.button}</div>
                 </div>
+                <img src={this.props.bgImage} alt=""/>
             </div>
         )
     }

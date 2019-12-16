@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Banner from '../../Elements/Banner'
+import banner01 from '../../../assets/img/banner01.jpg'
 import './Offer.scss'
 import OfferSection from './OfferSection'
 import scrollLock from 'scroll-lock';
@@ -12,7 +13,7 @@ export const sections = [
         name: 'Wizualizacje architektoniczne',
         refName: 'wizArchi',
         img: 'https://www.digitalarch.pl/static/media/53.9074f059.jpg',
-        description: `Naszą specjalnością są wizualizacje architektoniczne dla pracowni projektowych, deweloperów oraz projektantów wnętrz. Gdy jednak wszystko idzie w stronę fotorealizmu, my poszliśmy o krok dalej opracowując unikatowy styl graficzny, który udało się nam zyskać dzięki zastosowaniu najnowszych technologii oraz odrobiny magii. Nasze wizualizacje wyróżnią Cię na tle konkurencji, ułatwiając sprzedanie projektu, czy wygranie ważnego konkursu. Każda nasza wizualizacja to nie tylko wirtualne „zdjęcie” Twojego budynku, to historia którą chcesz przedstawić swojemu klientowi, klimat, którego nie jest w stanie uzyskać nikt inny. 
+        description: `Naszą specjalnością są wizualizacje architektoniczne dla pracowni projektowych, deweloperów oraz projektantów wnętrz. Gdy jednak wszystko idzie w stronę fotorealizmu, my poszliśmy o krok dalej opracowując unikatowy styl graficzny, który udało się nam zyskać dzięki zastosowaniu najnowszych technologii oraz odrobiny magii. Nasze wizualizacje wyróżnią Cię na tle konkurencji, ułatwiając sprzedanie projektu, czy wygranie ważnego konkursu. 
         Nie ogranicza nas również forma. Standardowo nasze wizualizacje są tworzone pod kątem wydruku w formacie A3 lub na stronę internetową, ale nie jest dla nas wyzwaniem stworzyć znacznie większy obraz, jeśli jest taka potrzeba.
         Nie czekaj, aż ktoś inny wykorzysta okazję, prześlij nam już dziś do wyceny swoje materiały, a otrzymasz ofertę z wyceną już kolejnego dnia roboczego.`
     },
@@ -77,7 +78,7 @@ export class Offer extends Component {
     render() {
         return (
             <div className='offerContainer'>
-                <Banner section='Nasza oferta' button='Zobacz czym się zajmujemy' />
+                <Banner section='Nasza oferta' button='Zobacz czym się zajmujemy' bgImage={banner01} />
                 <div className="content">
                     <div ref='items' className="offerItemsContainer">
                         {sections.map(item => {

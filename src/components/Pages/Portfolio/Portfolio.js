@@ -5,6 +5,7 @@ import * as Scroll from 'react-scroll';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import PortfolioItems from './PortfolioItems'
 import {v1 as uuidv1} from 'uuid';
+import banner02 from '../../../assets/img/banner02.jpg'
 
 const menuItems=[
     {
@@ -59,7 +60,7 @@ export class Portfolio extends Component {
         return (
             <div className='portfolioContainer'>
                 
-                <Banner section="Wybrane relizacje" button='Zobacz nasze portfolio' />
+                <Banner section="Wybrane relizacje" button='Zobacz nasze portfolio' bgImage={banner02} />
 
                 <div className="portfolioMenu">
                     <ul>

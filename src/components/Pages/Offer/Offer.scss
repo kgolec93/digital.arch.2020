@@ -36,6 +36,21 @@ $accentRed: #f35c2b;
           height: 100%;
           width: 100%;
           display: flex;
+          .button {
+            font-family: "Quicksand", open-sans;
+            background-color: #f35c2b00;
+            color: $accentRed;
+            border: 1px solid $accentRed;
+            border-radius: 4px;
+            padding: 8px 32px;
+            font-size: 1rem;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            &:hover {
+              background-color: #f35c2b;
+              color: #f3f3f3;
+              cursor: pointer;
+            }
+          }
           .header {
             font-size: 2rem;
             font-family: "Raleway", sans-serif !important;
@@ -70,21 +85,7 @@ $accentRed: #f35c2b;
               font-family: "Open Sans", sans-serif;
               text-align: left;
             }
-            .button {
-              font-family: "Quicksand", open-sans;
-              background-color: #f35c2b00;
-              color: $accentRed;
-              border: 1px solid $accentRed;
-              border-radius: 4px;
-              padding: 8px 32px;
-              font-size: 1rem;
-              transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-              &:hover {
-                background-color: #f35c2b;
-                color: #f3f3f3;
-                cursor: pointer;
-              }
-            }
+
           }
           .textContainer {
             background-color: #0303039d;

@@ -41,7 +41,7 @@ export class Header extends Component {
                         <li>o nas</li>
                         <li>kontakt</li>
                         <li>FAQ</li>
-                        <li className="langSelection">ENG</li>
+                        {/* <li className="langSelection">ENG</li> */}
                     </ul>
                 </nav>
             </header>

@@ -24,13 +24,15 @@ export class OfferSection extends Component {
             <div className='offerItem'>
                 <img src={this.props.data.img} alt={this.props.data.refName} />
                 <div className="wrapper">
-                    <div className={`headerContainer`}>
+                    <div className={`headerContainer ${this.props.active === this.props.data.refName ? 'active' : ''}`}>
                         <p className="header">{this.props.data.name}</p>
                         {/* <p className="content">{this.props.data.refName}</p> */}
                         <p className='button' onClick={this.handleClick}>Czytaj więcej</p>
                     </div>
                     <div className={`textContainer ${this.props.active === this.props.data.refName ? 'active' : ''}`}>
-                        <p>{this.props.data.refName}</p>
+                        <p onClick={this.handleClick} className="returnButton">wróć</p>
+                        <p className="header">{this.props.data.name}</p>
+                        <p>{this.props.data.description}</p>
                     </div>
                 </div>
             </div>

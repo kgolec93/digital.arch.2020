@@ -20,7 +20,7 @@ $accentRed: #f35c2b;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
         height: 100%;
         display: flex;
         img {
@@ -30,13 +30,18 @@ $accentRed: #f35c2b;
           object-position: 50% 50%;
         }
         .wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            
-            display: flex;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          display: flex;
+          .header {
+            font-size: 2rem;
+            font-family: "Raleway", sans-serif !important;
+            text-align: left;
+            font-weight: 400;
+          }
           .headerContainer {
             background-color: #0303039d;
             color: white;
@@ -47,11 +52,20 @@ $accentRed: #f35c2b;
             align-items: center;
             justify-content: center;
             transition: width 0.4s ease-in-out;
-            .header {
-              font-size: 2rem;
-              font-family: "Raleway", sans-serif;
-              text-align: left;
+            transform-origin: right;
+            transform: scaleX(1);
+            transition: transform 0.4s ease-in-out;
+            transition-delay: 0.2s;
+            &>p {
+                transition: opacity 0.2s ease-in-out;
             }
+            &.active {
+              transform: scaleX(0.1);
+              &>p {
+                  opacity: 0;
+              }
+            }
+
             .content {
               font-family: "Open Sans", sans-serif;
               text-align: left;
@@ -74,7 +88,12 @@ $accentRed: #f35c2b;
           }
           .textContainer {
             background-color: #0303039d;
+            padding: 24px;
+            padding-right: 48px;
             display: flex;
+            flex-direction: column;
+            font-weight: 100;
+            text-align: left;
             align-items: center;
             justify-content: center;
             flex: 6;
@@ -87,10 +106,19 @@ $accentRed: #f35c2b;
                 animation: textAnimation 0.6s ease-out 0.4s forwards;
               }
             }
+            .returnButton {
+                width: 100%;
+                color: $accentRed;
+                transition: color 0.2s ease-in-out;
+                &:hover {
+                    cursor: pointer;
+                    color: #c5b2ab;
+                }
+            }
             p {
-                transform: translateY(-32px);
-                opacity: 0;
-                color: #f3f3f3;
+              transform: translateY(-32px);
+              opacity: 0;
+              color: #f3f3f3;
             }
           }
         }
@@ -100,8 +128,8 @@ $accentRed: #f35c2b;
 }
 
 @keyframes textAnimation {
-    to {
-        transform: translateY(0px);
-        opacity: 1;
-    }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }

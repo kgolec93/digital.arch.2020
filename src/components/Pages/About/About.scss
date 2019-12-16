@@ -1,3 +1,22 @@
 .aboutContainer {
-    
+    .aboutWrapper {
+        min-height: 100vh;
+        display: flex;
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:nth-child(1) {
+                flex: 1;
+                p {
+                    width: 80%;
+                    text-align: justify;
+                }
+            }
+            &:nth-child(2) {
+                flex: 1;
+                flex-direction: column;
+            }
+        }
+    }
 }

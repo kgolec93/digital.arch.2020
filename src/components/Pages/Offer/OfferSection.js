@@ -30,9 +30,12 @@ export class OfferSection extends Component {
                         <p className='button' onClick={this.handleClick}>Czytaj więcej</p>
                     </div>
                     <div className={`textContainer ${this.props.active === this.props.data.refName ? 'active' : ''}`}>
-                        <p onClick={this.handleClick} className="returnButton">wróć</p>
-                        <p className="header">{this.props.data.name}</p>
-                        <p>{this.props.data.description}</p>
+                        <div className="textWrapper">
+                            <p onClick={this.handleClick} className="returnButton">wróć</p>
+                            <p className="header">{this.props.data.name}</p>
+                            <p className="description">{this.props.data.description}</p>
+                            <a href='/portfolio' className="returnButton">Zobacz nasze portfolio!</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -33,7 +33,7 @@ export class Portfolio extends Component {
     constructor() {
         super();
         this.state = {
-            pageOffset: 0,
+            pageOffset: window.pageYOffset,
             active: 'all',
             uuid: ''
         }

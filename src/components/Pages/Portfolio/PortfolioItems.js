@@ -202,6 +202,9 @@ export class PortfolioItems extends Component {
     }
     componentDidMount() {
         window.addEventListener('scroll', this.listenToScroll);
+        if (window.pageYOffset >= window.innerHeight - 100) {
+            this.setState({ animateItems: true })
+        }
     }
 
     listenToScroll = () => {

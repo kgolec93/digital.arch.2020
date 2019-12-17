@@ -34,7 +34,7 @@ export class OfferSection extends Component {
                             <p onClick={this.handleClick} className="returnButton">wróć</p>
                             <p className="header">{this.props.data.name}</p>
                             <p className="description">{this.props.data.description}</p>
-                            <a href='/portfolio' className="returnButton">Zobacz nasze portfolio!</a>
+                            <Link to='/portfolio' className="returnButton">Zobacz nasze portfolio!</Link>
                         </div>
                     </div>
                 </div>

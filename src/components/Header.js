@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom'
 
 export class Header extends Component {
     constructor() {
@@ -36,10 +36,10 @@ export class Header extends Component {
                 </div>
                 <nav>
                     <ul>
-                        <li><a href='/offer'>oferta</a></li>
-                        <li><a href='/portfolio'> portfolio</a></li>
-                        <li><a href='/about'>o nas</a></li>
-                        <li><a href='/contact'>kontakt</a></li>
+                        <li><Link to='/offer'>oferta</Link></li>
+                        <li><Link to='/portfolio'> portfolio</Link></li>
+                        <li><Link to='/about'>o nas</Link></li>
+                        <li><Link to='/contact'>kontakt</Link></li>
                         <li>FAQ</li>
                         {/* <li className="langSelection">ENG</li> */}
                     </ul>

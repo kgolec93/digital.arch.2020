@@ -17,7 +17,6 @@ export class App extends Component {
         <div className={window.location.pathname === '/' ? 'bgOverlay' : undefined}>
           <Header />
           <main>
-            <Switch>
               <Route exact path='/'>
                 {/* <div className="loader">
                   LOADING
@@ -33,15 +32,14 @@ export class App extends Component {
                 <Offer />
               </Route>
               <Route path='/portfolio'>
-                <Portfolio />
+               <Portfolio />
               </Route>    
               <Route path='/about'>
                 <About />
               </Route>
               <Route path='/contact'>
                 <Contact />
-              </Route>      
-            </Switch>
+              </Route>    
   
           </main>
           <footer className={window.location.pathname === '/' ? 'footerTransparent' : undefined}>

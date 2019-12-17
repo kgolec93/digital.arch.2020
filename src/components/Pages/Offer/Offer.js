@@ -3,10 +3,6 @@ import Banner from '../../Elements/Banner'
 import banner01 from '../../../assets/img/banner01.jpg'
 import './Offer.scss'
 import OfferSection from './OfferSection'
-import scrollLock from 'scroll-lock';
-
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 export const sections = [
     {
@@ -52,22 +48,12 @@ export const sections = [
 
 
 export class Offer extends Component {
-    componentDidMount() {
-        window.addEventListener('scroll', this.scrollFunction)
-    }
 
     constructor() {
         super();
         this.state = {
             isInit: true,
             active: ''
-        }
-    }
-
-    scrollFunction = () => {
-        if (this.state.isInit === true) {
-            scroll.scrollTo(window.innerHeight - 68);
-            this.setState({isInit: false})
         }
     }
 

@@ -1,6 +1,6 @@
 .aboutContainer {
     .aboutWrapper {
-        min-height: 100vh;
+        min-height: calc(100vh - 146px);
         display: flex;
         div {
             display: flex;
@@ -8,6 +8,14 @@
             align-items: center;
             &:nth-child(1) {
                 flex: 1;
+                padding: 0px 128px;
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                img {
+                    height: 48px;
+                    margin-bottom: 16px;
+                }
                 p {
                     width: 80%;
                     text-align: justify;
@@ -16,6 +24,19 @@
             &:nth-child(2) {
                 flex: 1;
                 flex-direction: column;
+                a {
+                    margin: 4px 0px;
+                    opacity: 0.8;
+                    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+                    &:hover {
+                        transform: scale(1.1);
+                        opacity: 1;
+
+                    }
+                }
+                .clientLogo {
+                    height: 32px;
+                }
             }
         }
     }

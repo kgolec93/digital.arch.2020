@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import './portfolioItemsAll.scss'
 import './Portfolio.scss'
 import { v1 as uuidv1 } from 'uuid';
+import { CSSTransition } from 'react-transition-group';
+import arrow from '../../../assets/misc/arrow.svg'
+import close from '../../../assets/misc/close.svg'
 
 const images = [
     {
@@ -198,7 +200,9 @@ export class PortfolioItems extends Component {
         this.state = {
             animateItems: false,
             active: props.active,
-            images: images
+            images: images,
+            isLightboxOpen: false,
+            activeImage: 1
         }
     }
 
@@ -234,19 +238,62 @@ export class PortfolioItems extends Component {
                 }
             }
         }
+    }
+
+    openLightbox = (nr) => {
+        this.setState({
+            isLightboxOpen: !this.state.isLightboxOpen,
+            activeImage: nr
+        })
+    }
+
+    changeImage = (val) => {
+        if (val === 'next') {
+            if (this.state.activeImage === this.state.images.length - 1) {
+                this.setState({ activeImage: 0 })
+            }
+            else {
+                this.setState({ activeImage: this.state.activeImage + 1 })
+            }
+        }
+        else if (val === 'prev') {
+            if (this.state.activeImage === 0) {
+                this.setState({ activeImage: this.state.images.length - 1 })
+            }
+            else {
+                this.setState({ activeImage: this.state.activeImage - 1 })
+            }
+        }
 
     }
+
     render() {
         return (
             <div key={this.props.uuid} className={`portfolio-${this.props.active}-container portfolioItemsContainer`}>
                 {this.state.images.map(i => {
                     return (
-                        <div className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`} >
+                        <div onClick={() => this.openLightbox(this.state.images.indexOf(i))} className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`} >
                             <img src={i.url} alt={i.url} />
                         </div>
                     )
                 })
                 }
+
+                <CSSTransition
+                    in={this.state.isLightboxOpen}
+                    timeout={300}
+                    classNames="lightbox"
+                    unmountOnExit
+                >
+
+                    <div className="lightboxOverlay" >
+                        <img src={this.state.images[this.state.activeImage].url} alt={this.state.images.alt} />
+                        <img onClick={()=>this.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
+                        <img onClick={()=>this.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
+                        <img onClick={() => { this.setState({ isLightboxOpen: false }) }} src={close} alt="close" id='close' className='exclude' />
+                    </div>
+
+                </CSSTransition>
             </div>
         )
     }

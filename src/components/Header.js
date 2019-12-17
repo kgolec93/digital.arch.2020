@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export class Header extends Component {
     constructor() {
@@ -36,10 +36,10 @@ export class Header extends Component {
                 </div>
                 <nav>
                     <ul>
-                        <li><Link to='/offer'>oferta</Link></li>
-                        <li><Link to='/portfolio'> portfolio</Link></li>
-                        <li><Link to='/about'>o nas</Link></li>
-                        <li><Link to='/contact'>kontakt</Link></li>
+                        <li><NavLink activeClassName='navLinkActive' to='/offer'>oferta</NavLink></li>
+                        <li><NavLink activeClassName='navLinkActive' to='/portfolio'> portfolio</NavLink></li>
+                        <li><NavLink activeClassName='navLinkActive' to='/about'>o nas</NavLink></li>
+                        <li><NavLink activeClassName='navLinkActive' to='/contact'>kontakt</NavLink></li>
                         <li>FAQ</li>
                         {/* <li className="langSelection">ENG</li> */}
                     </ul>

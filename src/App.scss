@@ -1,12 +1,10 @@
-$accentRed: #f35C2B;
-$accentRedTransp: #f35C2B00;
+$accentRed: #f35c2b;
+$accentRedTransp: #f35c2b00;
 
 a {
   text-decoration: none;
   color: inherit;
 }
-
-
 
 .App {
   text-align: center;
@@ -20,7 +18,6 @@ a {
     flex-direction: column;
     opacity: 1;
   }
-
 }
 
 @keyframes overlayAnim {
@@ -29,15 +26,16 @@ a {
   }
 }
 
-header, footer {
-  font-family: 'Quicksand', sans-serif;
+header,
+footer {
+  font-family: "Quicksand", sans-serif;
   padding: 8px 96px;
   color: #f5f5f5;
   font-weight: 200;
   z-index: 90;
 }
 
-header{
+header {
   transition: background-color 0.5s ease-in-out;
   &.headerDark {
     background-color: #030303;
@@ -47,10 +45,9 @@ header{
     position: fixed !important;
     top: 0;
     background-color: #030303;
-
   }
   & * {
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
   }
   position: fixed;
   top: 0px;
@@ -67,10 +64,10 @@ header{
     animation: headerItem 1s ease-in forwards;
     opacity: 1;
 
-    & *{
+    & * {
       display: flex;
       align-items: center;
-      font-family: 'Open Sans', sans-serif !important;
+      font-family: "Open Sans", sans-serif !important;
       font-size: 2.4rem;
     }
     span {
@@ -79,7 +76,6 @@ header{
     img {
       height: 48px;
       margin-right: 16px;
-
     }
   }
   nav {
@@ -88,16 +84,25 @@ header{
       display: flex;
       justify-content: flex-end;
       list-style: none;
-      li  {
-
+      li {
+        position: relative;
+        &>* {
+          padding: 4px 16px;
+        }
+        .navLinkActive {
+          border: 1px solid $accentRed;
+          border-radius: 4px;
+          color: $accentRed;
+          font-weight: 500;
+        }
         @for $i from 1 to 8 {
           &:nth-child(#{$i}) {
-            animation: headerItem 0.5s ease-in #{$i * .1 + 0.5}s forwards;
+            animation: headerItem 0.5s ease-in #{$i * 0.1 + 0.5}s forwards;
           }
         }
         opacity: 0;
         margin: 0px 8px;
-        padding: 4px 16px;
+        // padding: 4px 16px;
         border: 0.5px solid $accentRedTransp;
         border-radius: 6px;
         transition: color 0.3s ease-in-out;
@@ -113,7 +118,6 @@ header{
         }
       }
     }
-
   }
 }
 
@@ -123,15 +127,15 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  .bgSpaceStation{
+  .bgSpaceStation {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://www.digitalarch.pl/static/media/DA_1704_Phobos_01.903d5835.jpg') !important;
+    background-image: url("https://www.digitalarch.pl/static/media/DA_1704_Phobos_01.903d5835.jpg") !important;
     &::before {
-      content: '';
+      content: "";
       width: 100%;
       height: 100%;
       position: absolute;
@@ -162,7 +166,7 @@ main {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      *{
+      * {
         width: 100%;
       }
       h2 {
@@ -171,39 +175,39 @@ main {
       h3 {
         font-size: 1.3rem;
       }
-      h2, h3 {
-        font-family: 'Raleway', sans-serif;
+      h2,
+      h3 {
+        font-family: "Raleway", sans-serif;
         font-weight: 300;
-        &>span {
+        & > span {
           font-weight: 600;
         }
       }
       p {
-        font-family: 'Open Sans', sans-serif;
+        font-family: "Open Sans", sans-serif;
         font-weight: 200;
         text-align: justify;
         margin-bottom: 24px;
       }
       button {
-        border: 1px solid $accentRed;
+        border: 1px solid #f3f3f3;
         background: #f35d2b00;
-        color: $accentRed;
+        color: #f3f3f3;
         font-size: 1.1rem;
-        font-family: 'Quicksand', sans-serif;
+        font-family: "Quicksand", sans-serif;
         padding: 6px;
-        border-radius: 8px;
-        transition-property: background, color;
+        border-radius: 4px;
+        transition-property: border, color;
         transition-duration: 0.3s, 0.3s;
         &:focus {
           outline: none;
         }
         &:hover {
-          background: $accentRed;
-          color: #f5f5f5;
+          border: 1px solid $accentRed;
+          color: $accentRed;
           cursor: pointer;
         }
       }
-  
     }
     .landingPageFooter {
       background-color: #00000000;
@@ -213,19 +217,17 @@ main {
       width: 100%;
     }
   }
-
 }
 
 .footerTransparent {
   background-color: #00000000 !important;
-
 }
 footer {
   // position: absolute;
   // bottom: 0;
   // left: 0;
   // width: 100%;
-  background-color: #3B3A49;
+  background-color: #3b3a49;
   .contactItemsContainer {
     ul {
       display: flex;
@@ -252,7 +254,7 @@ footer {
     opacity: 0.8;
     font-size: 0.8rem;
     a {
-      font-family: 'Righteous';
+      font-family: "Righteous";
       &:hover {
         color: $accentRed;
       }
@@ -303,6 +305,5 @@ footer {
   100% {
     transform: scale(0);
     width: 0;
-
   }
 }

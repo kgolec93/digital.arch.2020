@@ -1,6 +1,6 @@
 .contactContainer {
   .contactContent {
-    min-height: 100vh;
+    min-height: calc(100vh - 146px);
     display: flex;
     div {
       display: flex;

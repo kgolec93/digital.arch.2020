@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import './portfolioItemsAll.scss'
 import './Portfolio.scss'
-import {v1 as uuidv1} from 'uuid';
-
+import { v1 as uuidv1 } from 'uuid';
 
 const images = [
     {
@@ -194,16 +193,36 @@ const images = [
 
 
 export class PortfolioItems extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             animateItems: false,
+            active: props.active,
+            images: images
         }
     }
+
+
     componentDidMount() {
         window.addEventListener('scroll', this.listenToScroll);
         if (window.pageYOffset >= window.innerHeight - 100) {
             this.setState({ animateItems: true })
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.active !== prevProps.active) // Check if it's a new user, you can also use some unique property, like the ID  (this.props.user.id !== prevProps.user.id)
+        {
+            this.setState({
+                active: this.props.active,
+                images: this.props.active !== 'all' ?
+                    images.filter((i) => {
+                        return i.type === this.props.active
+                    })
+                    :
+                    images
+            })
+
         }
     }
 
@@ -220,24 +239,13 @@ export class PortfolioItems extends Component {
     render() {
         return (
             <div key={this.props.uuid} className={`portfolio-${this.props.active}-container portfolioItemsContainer`}>
-                {this.props.active !== '' && this.props.active !== 'all'?
-                    images.filter((i) => {
-                        return i.type === this.props.active
-                    }).map(i => {
-                        return (
-                            <div className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`} >
-                                <img src={i.url} alt={i.url} />
-                            </div>
-                        )
-                    })
-                    :
-                    images.map(i => {
-                        return (
-                            <div key={uuidv1()} className={this.state.animateItems ? "portfolioAnim portfolio-all" : "portfolio-all"} >
-                                <img src={i.url} alt={i.url} />
-                            </div>
-                        )
-                    })
+                {this.state.images.map(i => {
+                    return (
+                        <div className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`} >
+                            <img src={i.url} alt={i.url} />
+                        </div>
+                    )
+                })
                 }
             </div>
         )

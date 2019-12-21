@@ -86,7 +86,7 @@ header {
       list-style: none;
       li {
         position: relative;
-        &>* {
+        & > * {
           padding: 4px 16px;
         }
         .navLinkActive {
@@ -118,6 +118,9 @@ header {
         }
       }
     }
+    #mobileMenu {
+      display: none;
+    }
   }
 }
 
@@ -134,7 +137,8 @@ main {
     width: 100%;
     height: 100%;
     background-image: url("https://www.digitalarch.pl/static/media/DA_1704_Phobos_01.903d5835.jpg") !important;
-    background-position: center;
+    background-size: cover;
+    background-position: center center;
     &::before {
       content: "";
       width: 100%;
@@ -306,5 +310,126 @@ footer {
   100% {
     transform: scale(0);
     width: 0;
+  }
+}
+
+//////////////////////
+///////// RWD ////////
+//////////////////////
+
+@media only screen and (max-width: 1200px) {
+  header {
+    margin: 0;
+    padding: 0px;
+    &.headerStatic {
+      background: none;
+      .headerBar {
+        background-color: #030303;
+      }
+    }
+    .logoContainer {
+      display: none;
+    }
+    nav {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      .webMenu {
+        flex-direction: column;
+        align-items: flex-end;
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        width: 100%;
+
+        li {
+          padding: 0px 8px;
+          display: flex;
+          justify-content: flex-end;
+          border-bottom: 1px solid #f3f3f350;
+          &:nth-child(1) {
+            border-top: 1px solid #f3f3f350;
+          }
+          .navLinkActive {
+            border: none;
+          }
+          border-radius: 0;
+          width: 100%;
+          margin: 0;
+          & * {
+            margin: 0;
+            padding: 0;
+            font-size: 1.2rem;
+          }
+        }
+      }
+      .headerBar {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        height: 68px;
+        background-color: #03030300;
+        transition: background-color 0.3s ease-in-out;
+        a {
+          display: flex;
+          align-items: center;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 100;
+          font-size: 1.3rem;
+          margin-left: 8px;
+          img {
+            height: 32px;
+            margin-right: 8px;
+          }
+          span {
+            font-family: 'Open Sans', sans-serif;
+
+            font-weight: 600;
+          }
+        }
+        #mobileMenu {
+          padding: 8px;
+          display: flex;
+          width: 48px;
+          height: auto;
+          margin: 0;
+        }
+      }
+
+      &.navOpened {
+        .headerBar {
+          background-color: #030303 !important;
+
+        }
+        .webMenu {
+          background-color: #030303ce;
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+  main {
+    // min-height: 100%;
+    .bgSpaceStation {
+      // display: block;
+      min-height: 100vh;
+      height: initial;
+      .windowContainer {
+        padding-top: 64px;
+        max-width: 100vw;
+        margin: 0;
+      }
+    }
+  }
+  footer {
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    .contactItemsContainer {
+      ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   }
 }

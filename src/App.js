@@ -20,12 +20,20 @@ export const Footer = (props) => {
 }
 
 export class LandingPage extends Component {
-  componentDidMount() {
-    disablePageScroll();
-  }
-  componentWillUnmount() {
-    enablePageScroll();
-  }
+  // componentDidMount() {
+  //   window.addEventListener('scroll', ()=>{
+  //     if (window.innerWidth > 1200) { /// RWD MILEPOINT
+  //       disablePageScroll();
+  //     }
+  //     else {
+  //       enablePageScroll();
+  //     }
+  //   })
+
+  // }
+  // componentWillUnmount() {
+  //   enablePageScroll();
+  // }
   render() {
     return (
       <div className='bgSpaceStation'>
@@ -35,7 +43,7 @@ export class LandingPage extends Component {
           <p>Zajmujemy się tworzeniem unikatowych wizualizacji 3d architektury i wnętrz, które wyznaczają nowy styl w branży. Zwiększymy Twoje szanse na triumf w ważnym konkursie, pomożemy sprzedać Twój projekt! Zaufaj nam i wynieś swój projekt na wyższy poziom!</p>
           <Link to='/offer'><button>Poznaj naszą ofertę!</button></Link>
         </div>
-        <Footer landing='landingPageFooter'/>
+        {/* <Footer landing='landingPageFooter'/> */}
       </div>
     )
   }

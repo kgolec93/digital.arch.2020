@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import mobileMenu from '../assets/misc/mobile-menu.svg'
 
 export class Header extends Component {
     constructor() {
         super();
         this.state = {
-            headerIsStatic: false
+            headerIsStatic: false,
+            mobileMenuActive: false
         }
     }
     componentDidMount() {
@@ -13,8 +15,10 @@ export class Header extends Component {
     }
 
     listenToScroll = () => {
-        if (window.pageYOffset >= window.innerHeight-68 ) {
+        if (window.pageYOffset >= window.innerHeight - 68) {
             this.setState({ headerIsStatic: true })
+            console.log('works')
+
         }
         else {
             this.setState({ headerIsStatic: false })
@@ -22,11 +26,17 @@ export class Header extends Component {
         }
     }
 
+    toggleMenu = () => {
+        this.setState(prevState => ({
+            mobileMenuActive: !prevState.mobileMenuActive
+        }))
+    }
+
     render() {
         return (
             <header className={
-                this.state.headerIsStatic ? 'headerStatic' : null
-                }>
+                this.state.headerIsStatic ? 'headerStatic' : ''
+            }>
                 <div className="logoContainer">
                     <a href='/'>
                         <img src='https://www.digitalarch.pl/static/media/digitalarch-logo.232d5c1f.svg' alt="digital.ARCH logo" />
@@ -34,15 +44,29 @@ export class Header extends Component {
                     </a>
 
                 </div>
-                <nav>
-                    <ul>
-                        <li><NavLink activeClassName='navLinkActive' to='/offer'>oferta</NavLink></li>
-                        <li><NavLink activeClassName='navLinkActive' to='/portfolio'> portfolio</NavLink></li>
-                        <li><NavLink activeClassName='navLinkActive' to='/about'>o nas</NavLink></li>
-                        <li><NavLink activeClassName='navLinkActive' to='/contact'>kontakt</NavLink></li>
+                <nav className={this.state.mobileMenuActive ? 'navOpened' : null}>
+                    <div className="headerBar">
+                        <a href='/'>
+                            <img src='https://www.digitalarch.pl/static/media/digitalarch-logo.232d5c1f.svg' alt="digital.ARCH logo" />
+                            digital.<span>ARCH</span>
+                        </a>
+                        <img
+                            src={mobileMenu}
+                            id='mobileMenu'
+                            alt="menu"
+                            onClick={this.toggleMenu}
+                        />
+                    </div>
+
+                    <ul className='webMenu'>
+                        <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to='/offer'>oferta</NavLink></li>
+                        <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to='/portfolio'> portfolio</NavLink></li>
+                        <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to='/about'>o nas</NavLink></li>
+                        <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to='/contact'>kontakt</NavLink></li>
                         <li>FAQ</li>
                         {/* <li className="langSelection">ENG</li> */}
                     </ul>
+
                 </nav>
             </header>
         )

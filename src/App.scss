@@ -79,6 +79,9 @@ header {
     }
   }
   nav {
+    #logoMobile {
+      display: none;
+    }
     flex: 5;
     ul {
       display: flex;
@@ -319,6 +322,8 @@ footer {
 
 @media only screen and (max-width: 1200px) {
   header {
+    z-index: 200;
+
     margin: 0;
     padding: 0px;
     &.headerStatic {
@@ -343,7 +348,7 @@ footer {
         width: 100%;
 
         li {
-          padding: 0px 8px;
+          padding: 4px 8px;
           display: flex;
           justify-content: flex-end;
           border-bottom: 1px solid #f3f3f350;
@@ -368,9 +373,9 @@ footer {
         width: 100%;
         justify-content: space-between;
         height: 68px;
-        background-color: #03030300;
+        background-color: #030303;
         transition: background-color 0.3s ease-in-out;
-        a {
+        #logoMobile {
           display: flex;
           align-items: center;
           font-family: 'Open Sans', sans-serif;

@@ -46,7 +46,7 @@ export class Header extends Component {
                 </div>
                 <nav className={this.state.mobileMenuActive ? 'navOpened' : null}>
                     <div className="headerBar">
-                        <a href='/'>
+                        <a id='logoMobile' href='/'>
                             <img src='https://www.digitalarch.pl/static/media/digitalarch-logo.232d5c1f.svg' alt="digital.ARCH logo" />
                             digital.<span>ARCH</span>
                         </a>

@@ -473,3 +473,26 @@ $accentRed: #f35c2b;
   opacity: 0;
   transition: opacity 300ms;
 }
+
+
+////////////////
+
+@media only screen and (max-width: 1200px) {
+  .portfolioContainer {
+    .portfolioMenu {
+      display: none;
+    }
+    .portfolioItemsContainer {
+      max-width: 100vw;
+      width: 100%;
+      margin: 0;
+      &.portfolio-all-container {
+        grid-template-rows: repeat(21, 120px);
+      }
+      &>div {
+        opacity: 1 !important;
+        margin: 4px !important;
+      }
+    }
+  }
+}

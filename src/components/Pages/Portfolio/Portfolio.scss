@@ -119,36 +119,46 @@ $accentRed: #f35c2b;
       background-color: #030303d2;
       z-index: 200;
       margin: 0px !important;
-      img:not(.exclude) {
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100%;
         width: 100%;
-        object-fit: contain;
-      }
-      .arrow {
-        height: 40px;
-        width: auto;
         position: absolute;
-        top: 50%;
-        &#left {
-          left: 32px;
-          transform-origin: center;
-          transform: rotate(180deg);
+        top: 0;
+        left: 0;
+        img:not(.exclude) {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
         }
-        &#right {
+        .arrow {
+          height: 40px;
+          width: auto;
+          position: absolute;
+          top: 50%;
+          &#left {
+            left: 32px;
+            transform-origin: center;
+            transform: rotate(180deg);
+          }
+          &#right {
+            right: 32px;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        #close {
+          width: auto;
+          top: 32px;
           right: 32px;
-        }
-        &:hover {
-          cursor: pointer;
-        }
-      }
-      #close {
-        width: auto;
-        top: 32px;
-        right: 32px;
-        position: absolute;
-        height: 24px;
-        &:hover {
-          cursor: pointer;
+          position: absolute;
+          height: 24px;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
@@ -481,12 +491,10 @@ $accentRed: #f35c2b;
   transition: opacity 300ms;
 }
 
-
 ////////////////
 
 @media only screen and (max-width: 1200px) {
   .portfolioContainer {
-    
     .portfolioMenu {
       display: none;
     }
@@ -497,7 +505,7 @@ $accentRed: #f35c2b;
       &.portfolio-all-container {
         grid-template-rows: repeat(21, 30vw);
       }
-      &>div {
+      & > div {
         margin: 4px !important;
       }
       #close {

@@ -38,12 +38,18 @@
           flex-direction: column;
           align-items: flex-end;
           width: 400px;
-          label {
-            font-family: "Quicksand", sans-serif;
-            font-weight: 100;
-            font-size: 0.8rem;
+          p {
+            width: 100%;
             text-align: left;
+            font-style: italic;
+            color: tomato;
           }
+          // label {
+          //   font-family: "Quicksand", sans-serif;
+          //   font-weight: 100;
+          //   font-size: 0.8rem;
+          //   text-align: left;
+          // }
           input {
             border: none;
             position: relative;
@@ -90,6 +96,21 @@
               cursor: pointer;
               background-color: #3b3a49;
               color: #f3f3f3;
+            }
+          }
+          &>div {
+            position: relative;
+            margin: 16px 0px;
+            
+            * {
+              margin: 0;
+              padding: 0;
+            }
+            iframe {
+              position: absolute;
+              width: 100%;
+              top: 0;
+              left: 0;
             }
           }
         }

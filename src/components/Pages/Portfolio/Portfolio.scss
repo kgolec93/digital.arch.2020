@@ -466,19 +466,19 @@ $accentRed: #f35c2b;
 //// ANIMATIONS
 
 .lightbox-enter {
-  opacity: 0;
+  opacity: 0 !important;
 }
 .lightbox-enter-active {
-  opacity: 1;
-  transform: translateX(0);
-  transition: opacity 300ms;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  transition: opacity 300ms !important;
 }
 .lightbox-exit {
-  opacity: 1;
+  opacity: 1 !important;
 }
 .lightbox-exit-active {
-  opacity: 0;
-  transition: opacity 300ms;
+  opacity: 0 !important;
+  transition: opacity 300ms !important;
 }
 
 
@@ -486,6 +486,7 @@ $accentRed: #f35c2b;
 
 @media only screen and (max-width: 1200px) {
   .portfolioContainer {
+    
     .portfolioMenu {
       display: none;
     }

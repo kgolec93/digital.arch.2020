@@ -22,7 +22,7 @@ export class Banner extends Component {
     }
 
     scrollFunc = () => {
-        scroll.scrollTo(window.innerHeight-68, {
+        scroll.scrollTo(this.refs.banner.offsetHeight-68, {
             duration: 1000,
             delay: 0,
             smooth: true,
@@ -32,7 +32,7 @@ export class Banner extends Component {
 
     render() {
         return (
-            <div className='bannerContainer'>
+            <div className='bannerContainer' ref='banner'>
                 <div className="bannerHeader">
                     <h1>{this.props.section}</h1>
                     <div onClick={this.scrollFunc}>{this.props.button}</div>

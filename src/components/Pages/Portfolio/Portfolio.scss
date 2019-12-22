@@ -112,6 +112,7 @@ $accentRed: #f35c2b;
       height: 100vh;
       background-color: #030303d2;
       z-index: 200;
+      margin: 0px !important;
       img:not(.exclude) {
         height: 100%;
         width: 100%;
@@ -492,6 +493,20 @@ $accentRed: #f35c2b;
       &>div {
         opacity: 1 !important;
         margin: 4px !important;
+      }
+      #close {
+        top: 12px !important;
+        right: 12px !important;
+        width: 20px !important;
+      }
+      .arrow {
+        height: 30px !important;
+        &#left {
+          left: 12px !important;
+        }
+        &#right {
+          right: 12px !important;
+        }
       }
     }
   }

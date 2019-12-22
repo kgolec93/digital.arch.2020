@@ -75,3 +75,14 @@ $accentRed: #f35C2B;
         background-color: #030303a1;
     }
 }
+
+@media only screen and (max-width: 1200px) {
+    .bannerContainer {
+        h1 {
+            font-size: 2.5rem !important;
+        }
+        div {
+            font-size: 1rem !important;
+        }
+    }
+}

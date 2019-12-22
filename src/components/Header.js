@@ -44,19 +44,20 @@ export class Header extends Component {
                     </a>
 
                 </div>
+                <div className="headerBar">
+                    <a id='logoMobile' href='/'>
+                        <img src='https://www.digitalarch.pl/static/media/digitalarch-logo.232d5c1f.svg' alt="digital.ARCH logo" />
+                        digital.<span>ARCH</span>
+                    </a>
+                    <img
+                        src={mobileMenu}
+                        id='mobileMenu'
+                        alt="menu"
+                        onClick={this.toggleMenu}
+                    />
+                </div>
                 <nav className={this.state.mobileMenuActive ? 'navOpened' : null}>
-                    <div className="headerBar">
-                        <a id='logoMobile' href='/'>
-                            <img src='https://www.digitalarch.pl/static/media/digitalarch-logo.232d5c1f.svg' alt="digital.ARCH logo" />
-                            digital.<span>ARCH</span>
-                        </a>
-                        <img
-                            src={mobileMenu}
-                            id='mobileMenu'
-                            alt="menu"
-                            onClick={this.toggleMenu}
-                        />
-                    </div>
+
 
                     <ul className='webMenu'>
                         <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to='/offer'>oferta</NavLink></li>

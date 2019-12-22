@@ -3,6 +3,7 @@ import Banner from '../../Elements/Banner'
 import './FAQ.scss'
 import banner from '../../../assets/img/banner03.jpg'
 import arrow from '../../../assets/misc/arrowBK.svg'
+import { Helmet } from 'react-helmet'
 
 const questions = [
     {
@@ -47,8 +48,13 @@ class Question extends Component {
     render() {
         return (
             <div className={this.props.activeItem === this.props.number ? 'questionWrapper active' : 'questionWrapper'}>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>FAQ | digital.ARCH wizualizacje</title>
+                    <link rel="canonical" href="https://digitalarch.pl/faq" />
+                </Helmet>
                 <h5 className="question" onClick={() => this.props.setActive(this.props.number)}>
-                    {this.props.question} <img src={arrow} alt='arrow'/>
+                    {this.props.question} <img src={arrow} alt='arrow' />
                 </h5>
                 <div className="answerWrapper">
                     <p className="answer">

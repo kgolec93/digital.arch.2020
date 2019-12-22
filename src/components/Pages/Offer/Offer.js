@@ -3,6 +3,7 @@ import Banner from '../../Elements/Banner'
 import banner01 from '../../../assets/img/banner01.jpg'
 import './Offer.scss'
 import OfferSection from './OfferSection'
+import { Helmet } from 'react-helmet'
 
 export const sections = [
     {
@@ -58,12 +59,17 @@ export class Offer extends Component {
     }
 
     setActive = (param) => {
-        this.setState({active: param})
+        this.setState({ active: param })
     }
 
     render() {
         return (
             <div className='offerContainer'>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>oferta | digital.ARCH wizualizacje</title>
+                    <link rel="canonical" href="https://digitalarch.pl/offer" />
+                </Helmet>
                 <Banner section='Nasza oferta' button='Zobacz czym się zajmujemy' bgImage={banner01} />
                 <div className="content">
                     <div ref='items' className="offerItemsContainer">

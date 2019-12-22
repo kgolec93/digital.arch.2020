@@ -105,10 +105,10 @@
               }
             }
           }
-          &>div {
+          & > div {
             position: relative;
             margin: 16px 0px;
-            
+
             * {
               margin: 0;
               padding: 0;
@@ -129,7 +129,7 @@
 @media only screen and (max-width: 1000px) {
   .contactContainer {
     .contactContent {
-      div {
+      & > div {
         &:nth-child(1) {
           padding: 16px;
           min-height: 50vh;
@@ -148,9 +148,12 @@
             padding: 16px;
             width: 100vw;
             // max-width: 400px;
-            &>div {
+            & > div {
               margin: 16px auto;
-              height: 70px;
+              height: 78px;
+              div {
+                max-height: 78px !important;
+              }
             }
             button {
               width: 100%;

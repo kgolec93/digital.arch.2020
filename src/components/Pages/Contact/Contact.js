@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Banner from '../../Elements/Banner'
 import './Contact.scss'
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import banner04 from '../../../assets/img/banner04.jpg'
 import logo from '../../../assets/img/digitalarch-logo.png'
 import { Helmet } from 'react-helmet'
@@ -25,10 +23,7 @@ export class Contact extends Component {
 
     submitForm = (e) => {
         e.preventDefault();
-        if (this.state.isVerified === false) {
-            this.setState({ alertMessage: 'Zweryfikuj, że nie jesteś robotem!' })
-        }
-        else {
+        if (this.state.isVerified !== false) {
             if (this.state.formEmail === '') {
                 this.setState({ alertMessage: 'Musisz podać swój email!' })
             }
@@ -59,7 +54,6 @@ export class Contact extends Component {
                 }
             }
         }
-
     }
 
 

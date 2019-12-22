@@ -2,6 +2,7 @@
     .aboutWrapper {
         min-height: calc(100vh - 146px);
         display: flex;
+        flex-wrap: wrap;
         div {
             display: flex;
             justify-content: center;
@@ -36,6 +37,22 @@
                 }
                 .clientLogo {
                     height: 32px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    .aboutContainer {
+        .aboutWrapper {
+            div {
+                padding: 16px !important;
+                &:nth-child(1) {
+                    p {
+                        width: 100%;
+                        font-size: 0.9rem;
+                    }
                 }
             }
         }

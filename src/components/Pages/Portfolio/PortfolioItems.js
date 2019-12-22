@@ -4,6 +4,7 @@ import { v1 as uuidv1 } from 'uuid';
 import { CSSTransition } from 'react-transition-group';
 import arrow from '../../../assets/misc/arrow.svg'
 import close from '../../../assets/misc/close.svg'
+import { useSwipeable, Swipeable } from 'react-swipeable'
 
 const images = [
     {
@@ -283,14 +284,19 @@ export class PortfolioItems extends Component {
                     classNames="lightbox"
                     unmountOnExit
                 >
+                    <div className="lightboxOverlay">
+                        <Swipeable
+                            onSwipedLeft={() => this.changeImage('next')}
+                            onSwipedRight={() => this.changeImage('prev')}
+                        >
 
-                    <div className="lightboxOverlay" >
-                        <img src={this.state.images[this.state.activeImage].url} alt={this.state.images.alt} />
-                        <img onClick={() => this.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
-                        <img onClick={() => this.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
-                        <img onClick={() => { this.setState({ isLightboxOpen: false }) }} src={close} alt="close" id='close' className='exclude' />
+                            <img src={this.state.images[this.state.activeImage].url} alt={this.state.images.alt} />
+                            <img onClick={() => this.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
+                            <img onClick={() => this.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
+                            <img onClick={() => { this.setState({ isLightboxOpen: false }) }} src={close} alt="close" id='close' className='exclude' />
+                        </Swipeable>
+
                     </div>
-
                 </CSSTransition>
             </div>
         )

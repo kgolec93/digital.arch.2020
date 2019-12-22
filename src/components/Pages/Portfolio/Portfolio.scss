@@ -112,6 +112,7 @@ $accentRed: #f35c2b;
       height: 100vh;
       background-color: #030303d2;
       z-index: 200;
+      margin: 0px !important;
       img:not(.exclude) {
         height: 100%;
         width: 100%;
@@ -472,4 +473,41 @@ $accentRed: #f35c2b;
 .lightbox-exit-active {
   opacity: 0;
   transition: opacity 300ms;
+}
+
+
+////////////////
+
+@media only screen and (max-width: 1200px) {
+  .portfolioContainer {
+    .portfolioMenu {
+      display: none;
+    }
+    .portfolioItemsContainer {
+      max-width: 100vw;
+      width: 100%;
+      margin: 0;
+      &.portfolio-all-container {
+        grid-template-rows: repeat(21, 120px);
+      }
+      &>div {
+        opacity: 1 !important;
+        margin: 4px !important;
+      }
+      #close {
+        top: 12px !important;
+        right: 12px !important;
+        width: 20px !important;
+      }
+      .arrow {
+        height: 30px !important;
+        &#left {
+          left: 12px !important;
+        }
+        &#right {
+          right: 12px !important;
+        }
+      }
+    }
+  }
 }

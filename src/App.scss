@@ -78,7 +78,13 @@ header {
       margin-right: 16px;
     }
   }
+  .headerBar {
+    display: none;
+  }
   nav {
+    top: 0px;
+
+
     flex: 5;
     ul {
       display: flex;
@@ -135,7 +141,7 @@ main {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url("https://www.digitalarch.pl/static/media/DA_1704_Phobos_01.903d5835.jpg") !important;
     background-size: cover;
     background-position: center center;
@@ -189,6 +195,7 @@ main {
         }
       }
       p {
+        margin-top: 16px;
         font-family: "Open Sans", sans-serif;
         font-weight: 200;
         text-align: justify;
@@ -215,7 +222,7 @@ main {
       }
     }
     .landingPageFooter {
-      background-color: #00000000;
+      background-color: #00000075;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -228,6 +235,7 @@ main {
   background-color: #00000000 !important;
 }
 footer {
+  z-index: 101;
   // position: absolute;
   // bottom: 0;
   // left: 0;
@@ -319,6 +327,8 @@ footer {
 
 @media only screen and (max-width: 1200px) {
   header {
+    z-index: 200;
+
     margin: 0;
     padding: 0px;
     &.headerStatic {
@@ -330,10 +340,53 @@ footer {
     .logoContainer {
       display: none;
     }
+
+    /////////////////////////
+    .headerBar {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      height: 68px;
+      background-color: #030303a1;
+      transition: background-color 0.3s ease-in-out;
+      position: absolute;
+      top: 0;
+      left: 0;
+      #logoMobile {
+        display: flex;
+        align-items: center;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 100;
+        font-size: 1.3rem;
+        margin-left: 8px;
+        img {
+          height: 32px;
+          margin-right: 8px;
+        }
+        span {
+          font-family: "Open Sans", sans-serif;
+
+          font-weight: 600;
+        }
+      }
+      #mobileMenu {
+        padding: 8px;
+        display: flex;
+        width: 48px;
+        height: auto;
+        margin: 0;
+      }
+    }
+
     nav {
       display: flex;
       align-items: flex-end;
       flex-direction: column;
+      position: absolute;
+      height: 0px;
+      top: 68px;
+      left: 0;
+      width: 100%;
       .webMenu {
         flex-direction: column;
         align-items: flex-end;
@@ -343,7 +396,7 @@ footer {
         width: 100%;
 
         li {
-          padding: 0px 8px;
+          padding: 4px 8px;
           display: flex;
           justify-content: flex-end;
           border-bottom: 1px solid #f3f3f350;
@@ -363,43 +416,12 @@ footer {
           }
         }
       }
-      .headerBar {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        height: 68px;
-        background-color: #03030300;
-        transition: background-color 0.3s ease-in-out;
-        a {
-          display: flex;
-          align-items: center;
-          font-family: 'Open Sans', sans-serif;
-          font-weight: 100;
-          font-size: 1.3rem;
-          margin-left: 8px;
-          img {
-            height: 32px;
-            margin-right: 8px;
-          }
-          span {
-            font-family: 'Open Sans', sans-serif;
-
-            font-weight: 600;
-          }
-        }
-        #mobileMenu {
-          padding: 8px;
-          display: flex;
-          width: 48px;
-          height: auto;
-          margin: 0;
-        }
-      }
 
       &.navOpened {
+        height: 100%;
+
         .headerBar {
           background-color: #030303 !important;
-
         }
         .webMenu {
           background-color: #030303ce;
@@ -409,15 +431,20 @@ footer {
     }
   }
   main {
-    // min-height: 100%;
     .bgSpaceStation {
-      // display: block;
-      min-height: 100vh;
-      height: initial;
       .windowContainer {
         padding-top: 64px;
         max-width: 100vw;
         margin: 0;
+        h2 {
+          font-size: 1.5em;
+        }
+        h3 {
+          font-size: 1em;
+        }
+        p {
+          font-size: 0.9em;
+        }
       }
     }
   }

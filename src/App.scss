@@ -84,7 +84,6 @@ header {
   nav {
     top: 0px;
 
-
     flex: 5;
     ul {
       display: flex;
@@ -260,6 +259,15 @@ footer {
         }
         display: flex;
         align-items: center;
+        &:last-child {
+          margin: 12px 0px;
+          img {
+            height: 28px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
       }
     }
   }
@@ -456,6 +464,21 @@ footer {
       ul {
         flex-direction: column;
         align-items: center;
+        li {
+          img {
+            height: 16px;
+          }
+          height: 30px;
+          font-size: 0.9rem;
+          &:last-child {
+            img {
+              height: 24px;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+          }
+        }
       }
     }
   }

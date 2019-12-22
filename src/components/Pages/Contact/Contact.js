@@ -25,35 +25,41 @@ export class Contact extends Component {
 
     submitForm = (e) => {
         e.preventDefault();
-        if (this.state.formEmail === '') {
-            this.setState({ alertMessage: 'Musisz podać swój email!' })
+        if (this.state.isVerified === false) {
+            this.setState({ alertMessage: 'Zweryfikuj, że nie jesteś robotem!' })
         }
         else {
-            if (this.state.formName === '') {
-                this.setState({ alertMessage: 'Podaj swoje imię!' })
+            if (this.state.formEmail === '') {
+                this.setState({ alertMessage: 'Musisz podać swój email!' })
             }
             else {
-                if (this.state.formMessage === '') {
-                    this.setState({ alertMessage: 'Pole wiadomości nie może być puste!' })
+                if (this.state.formName === '') {
+                    this.setState({ alertMessage: 'Podaj swoje imię!' })
                 }
                 else {
-                    if (this.state.isVerified === true) {
-                        $.ajax({
-                            data: this.state,
-                            type: 'POST',
-                            url: '/api/contact.php',
-                            success: (data) => {
-                                console.info(data)
-                                this.setState({ formName: '', formEmail: '', formSubject: '', formMessage: '', alertMessage: data })
-                            },
-                            error: (xhr, status, err) => {
-                                console.error(status, err.toString())
-                            }
-                        })
+                    if (this.state.formMessage === '') {
+                        this.setState({ alertMessage: 'Pole wiadomości nie może być puste!' })
+                    }
+                    else {
+                        if (this.state.isVerified === true) {
+                            $.ajax({
+                                data: this.state,
+                                type: 'POST',
+                                url: '/api/contact.php',
+                                success: (data) => {
+                                    console.info(data)
+                                    this.setState({ formName: '', formEmail: '', formSubject: '', formMessage: '', alertMessage: data })
+                                },
+                                error: (xhr, status, err) => {
+                                    console.error(status, err.toString())
+                                }
+                            })
+                        }
                     }
                 }
             }
         }
+
     }
 
 
@@ -115,7 +121,10 @@ export class Contact extends Component {
                                 theme='dark'
                                 sitekey="6LdQSskUAAAAANBdxt7_P_dB4mcmt6Wxa2SF8cTG"
                             />
-                            <button type="submit">
+                            <button
+                                className={this.state.isVerified ? '' : 'notVerified'}
+                                type="submit"
+                            >
                                 Wyślij wiadomość
                             </button>
                         </form>

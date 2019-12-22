@@ -97,6 +97,13 @@
               background-color: #3b3a49;
               color: #f3f3f3;
             }
+            &.notVerified {
+              opacity: 0.2;
+              &:hover {
+                background: none;
+                cursor: default;
+              }
+            }
           }
           &>div {
             position: relative;
@@ -139,9 +146,15 @@
           box-sizing: padding-box !important;
           form {
             padding: 16px;
-
             width: 100vw;
             // max-width: 400px;
+            &>div {
+              margin: 16px auto;
+              height: 70px;
+            }
+            button {
+              width: 100%;
+            }
           }
         }
       }

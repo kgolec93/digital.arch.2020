@@ -232,10 +232,8 @@ export class PortfolioItems extends Component {
 
     listenToScroll = () => {
         if (this.state.animateItems !== true) {
-            if (window.innerWidth > 1200) { ///width set up to RWD - value to be set later
-                if (window.pageYOffset >= window.innerHeight - 100) {
-                    this.setState({ animateItems: true })
-                }
+            if (window.pageYOffset >= window.innerHeight - 100) {
+                this.setState({ animateItems: true })
             }
         }
     }
@@ -288,8 +286,8 @@ export class PortfolioItems extends Component {
 
                     <div className="lightboxOverlay" >
                         <img src={this.state.images[this.state.activeImage].url} alt={this.state.images.alt} />
-                        <img onClick={()=>this.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
-                        <img onClick={()=>this.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
+                        <img onClick={() => this.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
+                        <img onClick={() => this.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
                         <img onClick={() => { this.setState({ isLightboxOpen: false }) }} src={close} alt="close" id='close' className='exclude' />
                     </div>
 

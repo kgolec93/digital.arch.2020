@@ -9,7 +9,6 @@ import { sections } from './components/Pages/Offer/Offer'
 import { About } from './components/Pages/About/About';
 import { Contact } from './components/Pages/Contact/Contact';
 import { FAQ } from './components/Pages/FAQ/FAQ';
-import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
 export const Footer = (props) => {
   return (

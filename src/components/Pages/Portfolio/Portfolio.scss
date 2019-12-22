@@ -96,13 +96,19 @@ $accentRed: #f35c2b;
     display: grid;
     grid-template-columns: 33% 33% 33%;
     &.portfolio-all-container {
-      grid-template-rows: repeat(21, 320px);
+      grid-template-rows: repeat(21, 20vw);
     }
     &.portfolio-arch-container {
-      grid-template-rows: repeat(9, 320px);
+      grid-template-rows: repeat(9, 20vw);
     }
     &.portfolio-interior-container {
-      grid-template-rows: repeat(8, 320px);
+      grid-template-rows: repeat(8, 20vw);
+    }
+    &.portfolio-product-container {
+      grid-template-rows: repeat(3, 20vw);
+    }
+    &.portfolio-special-container {
+      grid-template-rows: repeat(2, 20vw);
     }
     .lightboxOverlay {
       position: fixed;
@@ -488,7 +494,7 @@ $accentRed: #f35c2b;
       width: 100%;
       margin: 0;
       &.portfolio-all-container {
-        grid-template-rows: repeat(21, 120px);
+        grid-template-rows: repeat(21, 30vw);
       }
       &>div {
         opacity: 1 !important;

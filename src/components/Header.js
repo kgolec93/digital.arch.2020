@@ -2,6 +2,29 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import mobileMenu from '../assets/misc/mobile-menu.svg'
 
+const sections = [
+    {
+        name: 'oferta',
+        link: '/offer'
+    },
+    {
+        name: 'portfolio',
+        link: '/portfolio'
+    },
+    {
+        name: 'o nas',
+        link: '/about'
+    },
+    {
+        name: 'kontakt',
+        link: '/contact'
+    },
+    {
+        name: 'FAQ',
+        link: '/faq'
+    },
+]
+
 export class Header extends Component {
     constructor() {
         super();
@@ -60,11 +83,11 @@ export class Header extends Component {
 
 
                     <ul className='webMenu'>
-                        <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to='/offer'>oferta</NavLink></li>
-                        <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to='/portfolio'> portfolio</NavLink></li>
-                        <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to='/about'>o nas</NavLink></li>
-                        <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to='/contact'>kontakt</NavLink></li>
-                        <li>FAQ</li>
+                        {sections.map(item=>{
+                            return(
+                                <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to={item.link}>{item.name}</NavLink></li>
+                            )
+                        })}
                         {/* <li className="langSelection">ENG</li> */}
                     </ul>
 

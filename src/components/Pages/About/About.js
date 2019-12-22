@@ -14,6 +14,9 @@ import artisvisioLogo from '../../../assets/logos/artisvisio.png'
 import archilupusLogo from '../../../assets/logos/archilupus.png'
 import archilabLogo from '../../../assets/logos/archilab.png'
 
+import { Helmet } from 'react-helmet'
+
+
 const clients = [
     {
         name: 'MOI Architekci',
@@ -66,6 +69,11 @@ const clients = [
 export const About = () => {
     return (
         <div className='aboutContainer'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>o nas | digital.ARCH wizualizacje</title>
+                <link rel="canonical" href="https://digitalarch.pl/about" />
+            </Helmet>
             <Banner section="Kilka słów o nas" button='Czytaj dalej' bgImage={banner03} />
             <div className="aboutWrapper">
                 <div>

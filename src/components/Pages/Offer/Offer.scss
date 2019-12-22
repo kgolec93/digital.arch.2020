@@ -39,15 +39,16 @@ $accentRed: #f35c2b;
           .button {
             font-family: "Quicksand", open-sans;
             background-color: #f35c2b00;
-            color: $accentRed;
-            border: 1px solid $accentRed;
+            color: #f3f3f3;
+            border: 1px solid #f3f3f3;
             border-radius: 4px;
             padding: 8px 32px;
             font-size: 1rem;
-            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            transition-property: border, color !important;
+            transition-duration: 0.2s, 0.2s !important;
             &:hover {
-              background-color: #f35c2b;
-              color: #f3f3f3;
+              border: 1px solid $accentRed;
+              color: $accentRed;
               cursor: pointer;
             }
           }
@@ -85,7 +86,6 @@ $accentRed: #f35c2b;
               font-family: "Open Sans", sans-serif;
               text-align: left;
             }
-
           }
           .textContainer {
             background-color: #0303039d;
@@ -135,5 +135,52 @@ $accentRed: #f35c2b;
   to {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .offerContainer {
+    .offerItemsContainer {
+      .offerSection {
+        min-height: 90vh !important;
+        .offerItem {
+          .wrapper {
+            flex-direction: column;
+            .headerContainer {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: #03030357;
+              &.active {
+                transform: scaleX(0);
+              }
+              .header {
+                text-align: center;
+              }
+            }
+            .textContainer {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              padding: 16px;
+              background-color: #030303b6;
+
+              .header {
+                font-size: 1.4rem;;
+              }
+              .description {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+              }
+            }
+          }
+        }
+
+      }
+    }
   }
 }

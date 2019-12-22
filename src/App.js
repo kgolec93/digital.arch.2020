@@ -8,7 +8,7 @@ import Portfolio from './components/Pages/Portfolio/Portfolio'
 import { sections } from './components/Pages/Offer/Offer'
 import { About } from './components/Pages/About/About';
 import { Contact } from './components/Pages/Contact/Contact';
-import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import { FAQ } from './components/Pages/FAQ/FAQ';
 
 export const Footer = (props) => {
   return (
@@ -58,6 +58,9 @@ export class App extends Component {
           </Route>
           <Route path='/contact'>
             <Contact />
+          </Route>
+          <Route path='/faq'>
+            <FAQ />
           </Route>
 
         </main>

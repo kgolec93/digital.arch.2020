@@ -38,10 +38,8 @@ export class Header extends Component {
     }
 
     listenToScroll = () => {
-        if (window.pageYOffset >= window.innerHeight - 68) {
+        if (window.pageYOffset >= window.innerHeight - 72) {
             this.setState({ headerIsStatic: true })
-            console.log('works')
-
         }
         else {
             this.setState({ headerIsStatic: false })

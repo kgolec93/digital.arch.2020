@@ -6,6 +6,7 @@ import arrow from '../../../assets/misc/arrow.svg';
 import close from '../../../assets/misc/close.svg';
 import './Portfolio.scss';
 import images from './data'
+import swipe from '../../../assets/misc/swipe.svg'
 
 
 class Lightbox extends Component {
@@ -42,6 +43,7 @@ class Lightbox extends Component {
                     <img onClick={() => this.props.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
                     <img onClick={() => this.props.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
                     <img onClick={() => this.props.closeLightbox()} src={close} alt="close" id='close' className='exclude' />
+                    <p><img src={swipe} alt="swipe"/>swipe to change images</p>
                 </Swipeable>
                 {/* <input type="text" ref='input' onChange={this.handleKeyPress} /> */}
 

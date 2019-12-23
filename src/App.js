@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import './App.scss';
 import ContactItems from './components/ContactItems';
 import Header from './components/Header';
@@ -36,6 +36,18 @@ export class LandingPage extends Component {
 
 }
 
+const Page404 = () => {
+  return (
+    [
+      <div className="Wrapper404">
+        <h1>404</h1>
+        <p>Nie ma takiej strony w tej domenie :(</p>
+        <Link to='/'>Wróć do strony głównej</Link>
+      </div>,
+      <div className="header404"></div>
+    ]
+  )
+}
 
 export class App extends Component {
   render() {
@@ -43,24 +55,27 @@ export class App extends Component {
       <div className='App'>
         <Header />
         <main>
-          <Route exact path='/'>
-            <LandingPage />
-          </Route>
-          <Route exact path='/offer'>
-            <Offer />
-          </Route>
-          <Route path='/portfolio'>
-            <Portfolio />
-          </Route>
-          <Route path='/about'>
-            <About />
-          </Route>
-          <Route path='/contact'>
-            <Contact />
-          </Route>
-          <Route path='/faq'>
-            <FAQ />
-          </Route>
+          <Switch>
+            <Route exact path='/'>
+              <LandingPage />
+            </Route>
+            <Route exact path='/offer'>
+              <Offer />
+            </Route>
+            <Route path='/portfolio'>
+              <Portfolio />
+            </Route>
+            <Route path='/about'>
+              <About />
+            </Route>
+            <Route path='/contact'>
+              <Contact />
+            </Route>
+            <Route path='/faq'>
+              <FAQ />
+            </Route>
+            <Page404 />
+          </Switch>
 
         </main>
         <Footer />

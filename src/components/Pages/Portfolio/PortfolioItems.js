@@ -8,6 +8,50 @@ import './Portfolio.scss';
 import images from './data'
 
 
+class Lightbox extends Component {
+    componentDidMount() {
+        this.refs.lightboxOverlayRef.focus();
+        disablePageScroll();
+    }
+    componentDidUpdate() {
+        this.refs.lightboxOverlayRef.focus();
+    }
+    componentWillUnmount() {
+        enablePageScroll();
+    }
+
+    render() {
+        return (
+            <div
+                className="lightboxOverlay"
+                ref="lightboxOverlayRef"
+                tabIndex='0'
+                onKeyDown={this.props.handleKeyPress}
+            >
+                <Swipeable
+                    onSwipedLeft={() => this.props.changeImage('next')} // 
+                    onSwipedRight={() => this.props.changeImage('prev')} //
+                >
+
+                    <img
+                        ref='lightboxOverlayRef'
+                        onKeyDown={() => console.log('lightbox-hit')}
+                        src={this.props.images[this.props.activeImage].url}
+                        alt={this.props.images.alt}
+                    />
+                    <img onClick={() => this.props.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
+                    <img onClick={() => this.props.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
+                    <img onClick={() => this.props.closeLightbox()} src={close} alt="close" id='close' className='exclude' />
+                </Swipeable>
+                {/* <input type="text" ref='input' onChange={this.handleKeyPress} /> */}
+
+            </div>
+        )
+    }
+}
+
+
+
 export class PortfolioItems extends Component {
     constructor(props) {
         super(props);
@@ -40,13 +84,6 @@ export class PortfolioItems extends Component {
                     :
                     images
             })
-        }
-        else if (this.state.isLightboxOpen === true) {
-            this.refs.input.focus();
-            disablePageScroll();
-        }
-        else if (this.state.isLightboxOpen === false) {
-            enablePageScroll();
         }
 
     }
@@ -125,24 +162,13 @@ export class PortfolioItems extends Component {
                     classNames="lightbox"
                     unmountOnExit
                 >
-                    <div
-                        className="lightboxOverlay"
-                        ref='lightboxOverlay'
-                        onKeyDown={this.handleKeyPress}
-                    >
-                        <Swipeable
-                            onSwipedLeft={() => this.changeImage('next')}
-                            onSwipedRight={() => this.changeImage('prev')}
-                        >
-
-                            <img src={this.state.images[this.state.activeImage].url} alt={this.state.images.alt} />
-                            <img onClick={() => this.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
-                            <img onClick={() => this.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
-                            <img onClick={() => this.setState({ isLightboxOpen: false, activeImage: 0 })} src={close} alt="close" id='close' className='exclude' />
-                        </Swipeable>
-                        <input type="text" ref='input' onChange={this.handleKeyPress} />
-
-                    </div>
+                    <Lightbox 
+                        changeImage={this.changeImage}
+                        closeLightbox={()=>this.setState({ isLightboxOpen: false, activeImage: 0 })}
+                        images={this.state.images}
+                        activeImage={this.state.activeImage}
+                        handleKeyPress={this.handleKeyPress}
+                    />
                 </CSSTransition>
             </div>
         )

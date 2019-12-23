@@ -275,8 +275,10 @@ footer {
           margin: 12px 0px;
           img {
             height: 28px;
+            transition: transform 0.2s ease-in-out;
             &:hover {
               cursor: pointer;
+              transform: scale(1.2);
             }
           }
         }

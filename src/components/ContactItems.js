@@ -1,9 +1,9 @@
 import React from 'react'
+import facebookIcon from '../assets/misc/facebook-circle.svg'
 import instaIcon from '../assets/misc/instagram-circle.svg'
 import linkedinIcon from '../assets/misc/linkedin-circle.svg'
-import facebookIcon from '../assets/misc/facebook-circle.svg'
-import phoneIcon from '../assets/test-img/phone.svg'
 import mailIcon from '../assets/test-img/mail.svg'
+import phoneIcon from '../assets/test-img/phone.svg'
 
 export default function ContactItems() {
     return (

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import './App.scss';
-import ContactItems from './components/ContactItems'
-import Header from './components/Header'
-import { Link, Switch, Route } from 'react-router-dom'
-import Offer from './components/Pages/Offer/Offer'
-import Portfolio from './components/Pages/Portfolio/Portfolio'
-import { sections } from './components/Pages/Offer/Offer'
+import ContactItems from './components/ContactItems';
+import Header from './components/Header';
 import { About } from './components/Pages/About/About';
 import { Contact } from './components/Pages/Contact/Contact';
 import { FAQ } from './components/Pages/FAQ/FAQ';
+import Offer from './components/Pages/Offer/Offer';
+import Portfolio from './components/Pages/Portfolio/Portfolio';
+import { Helmet } from 'react-helmet'
 
 export const Footer = (props) => {
   return (
@@ -37,6 +37,23 @@ export class LandingPage extends Component {
 
 }
 
+const Page404 = () => {
+  return (
+    [
+      <div className="Wrapper404">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>404 | digital.ARCH wizualizacje</title>
+          <link rel="canonical" href="https://digitalarch.pl/404" />
+        </Helmet>
+        <h1>404</h1>
+        <p>Nie ma takiej strony w tej domenie :(</p>
+        <Link to='/'>Wróć do strony głównej</Link>
+      </div>,
+      <div className="header404"></div>
+    ]
+  )
+}
 
 export class App extends Component {
   render() {
@@ -44,24 +61,29 @@ export class App extends Component {
       <div className='App'>
         <Header />
         <main>
-          <Route exact path='/'>
-            <LandingPage />
-          </Route>
-          <Route exact path='/offer'>
-            <Offer />
-          </Route>
-          <Route path='/portfolio'>
-            <Portfolio />
-          </Route>
-          <Route path='/about'>
-            <About />
-          </Route>
-          <Route path='/contact'>
-            <Contact />
-          </Route>
-          <Route path='/faq'>
-            <FAQ />
-          </Route>
+          <Switch>
+            <Route exact path='/'>
+              <LandingPage />
+            </Route>
+            <Route exact path='/offer'>
+              <Offer />
+            </Route>
+            <Route path='/portfolio'>
+              <Portfolio />
+            </Route>
+            <Route path='/about'>
+              <About />
+            </Route>
+            <Route path='/contact'>
+              <Contact />
+            </Route>
+            <Route path='/faq'>
+              <FAQ />
+            </Route>
+            <Route>
+              <Page404 />
+            </Route>
+          </Switch>
 
         </main>
         <Footer />

@@ -1,198 +1,53 @@
-import React, { Component } from 'react'
-import './Portfolio.scss'
-import { v1 as uuidv1 } from 'uuid';
+import React, { Component } from 'react';
+import { Swipeable } from 'react-swipeable';
 import { CSSTransition } from 'react-transition-group';
-import arrow from '../../../assets/misc/arrow.svg'
-import close from '../../../assets/misc/close.svg'
-import { useSwipeable, Swipeable } from 'react-swipeable'
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import arrow from '../../../assets/misc/arrow.svg';
+import close from '../../../assets/misc/close.svg';
+import './Portfolio.scss';
+import images from './data'
+import swipe from '../../../assets/misc/swipe.svg'
 
-const images = [
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/01.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/03.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/02.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/04.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/05.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/06.jpg',
-        alt: 'alt1',
-        type: 'special',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/07.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/08.jpg',
-        alt: 'alt1',
-        type: 'product',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/09.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/10.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/11.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/12.jpg',
-        alt: 'alt1',
-        type: 'product',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/13.jpg',
-        alt: 'alt1',
-        type: 'special',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/14.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/15.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/16.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/17.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/18.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/19.jpg',
-        alt: 'alt1',
-        type: 'product',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/20.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/21.jpg',
-        alt: 'alt1',
-        type: 'product',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/22.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/23.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/24.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/25.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/26.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/27.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/28.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/29.jpg',
-        alt: 'alt1',
-        type: 'special',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/30.jpg',
-        alt: 'alt1',
-        type: 'product',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/31.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/32.jpg',
-        alt: 'alt1',
-        type: 'product',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/33.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/34.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/35.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/36.jpg',
-        alt: 'alt1',
-        type: 'arch',
-    },
-    {
-        url: 'https://www.digitalarch.pl/resources/thumbnails/37.jpg',
-        alt: 'alt1',
-        type: 'interior',
-    },
-]
+
+class Lightbox extends Component {
+    componentDidMount() {
+        this.refs.lightboxOverlayRef.focus();
+        disablePageScroll();
+    }
+    componentDidUpdate() {
+        this.refs.lightboxOverlayRef.focus();
+    }
+    componentWillUnmount() {
+        enablePageScroll();
+    }
+
+    render() {
+        return (
+            <div
+                className="lightboxOverlay"
+                ref="lightboxOverlayRef"
+                tabIndex='0'
+                onKeyDown={this.props.handleKeyPress}
+            >
+                <Swipeable
+                    onSwipedLeft={() => this.props.changeImage('next')} // 
+                    onSwipedRight={() => this.props.changeImage('prev')} //
+                >
+
+                    <img
+                        src={this.props.images[this.props.activeImage].url}
+                        alt={this.props.images.alt}
+                    />
+                    <img onClick={() => this.props.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
+                    <img onClick={() => this.props.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
+                    <img onClick={() => this.props.closeLightbox()} src={close} alt="close" id='close' className='exclude' />
+                    <p><img src={swipe} alt="swipe"/>przesuń palcem żeby przewinąć</p>
+                </Swipeable>
+            </div>
+        )
+    }
+}
+
 
 
 export class PortfolioItems extends Component {
@@ -210,7 +65,7 @@ export class PortfolioItems extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.listenToScroll);
-        if (window.pageYOffset >= window.innerHeight - 100) {
+        if (window.pageYOffset >= window.innerHeight - 300) {
             this.setState({ animateItems: true })
         }
     }
@@ -227,8 +82,8 @@ export class PortfolioItems extends Component {
                     :
                     images
             })
-
         }
+
     }
 
     listenToScroll = () => {
@@ -266,12 +121,33 @@ export class PortfolioItems extends Component {
 
     }
 
+    handleKeyPress = (e) => {
+        if (e.keyCode === 37) {
+            e.preventDefault();
+            this.changeImage('prev');
+        }
+        else if (e.keyCode === 39) {
+            e.preventDefault();
+            this.changeImage('next');
+        }
+        else if (e.keyCode === 27) {
+            this.setState({ isLightboxOpen: false, activeImage: 0 });
+        }
+        else if (e.keyCode === 38 || e.keyCode === 40) {
+            e.preventDefault();
+        }
+    }
+
     render() {
         return (
             <div key={this.props.uuid} className={`portfolio-${this.props.active}-container portfolioItemsContainer`}>
                 {this.state.images.map(i => {
                     return (
-                        <div onClick={() => this.openLightbox(this.state.images.indexOf(i))} className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`} >
+                        <div
+                            onClick={() => this.openLightbox(this.state.images.indexOf(i))}
+                            className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`}
+                            key={i.url}
+                        >
                             <img src={i.url} alt={i.url} />
                         </div>
                     )
@@ -284,19 +160,13 @@ export class PortfolioItems extends Component {
                     classNames="lightbox"
                     unmountOnExit
                 >
-                    <div className="lightboxOverlay">
-                        <Swipeable
-                            onSwipedLeft={() => this.changeImage('next')}
-                            onSwipedRight={() => this.changeImage('prev')}
-                        >
-
-                            <img src={this.state.images[this.state.activeImage].url} alt={this.state.images.alt} />
-                            <img onClick={() => this.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
-                            <img onClick={() => this.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
-                            <img onClick={() => { this.setState({ isLightboxOpen: false }) }} src={close} alt="close" id='close' className='exclude' />
-                        </Swipeable>
-
-                    </div>
+                    <Lightbox 
+                        changeImage={this.changeImage}
+                        closeLightbox={()=>this.setState({ isLightboxOpen: false, activeImage: 0 })}
+                        images={this.state.images}
+                        activeImage={this.state.activeImage}
+                        handleKeyPress={this.handleKeyPress}
+                    />
                 </CSSTransition>
             </div>
         )

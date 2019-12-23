@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from 'react-snapshot';
-import './index.scss';
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router } from 'react-router-dom'
+import './index.scss';
 import ScrollToTop from './ScrollToTop';
+import * as serviceWorker from './serviceWorker';
 
 const rootElement = document.getElementById("root");
 

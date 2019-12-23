@@ -1,20 +1,18 @@
-import React from 'react'
-import Banner from '../../Elements/Banner'
-import './About.scss'
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import banner03 from '../../../assets/img/banner03.jpg'
-import logo from '../../../assets/img/digitalarch-logo.png'
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import banner03 from '../../../assets/img/banner03.jpg';
+import logo from '../../../assets/img/digitalarch-logo.png';
+import amrestLogo from '../../../assets/logos/amrest.png';
+import archeLogo from '../../../assets/logos/arche.png';
+import archilabLogo from '../../../assets/logos/archilab.png';
+import archilupusLogo from '../../../assets/logos/archilupus.png';
+import artisvisioLogo from '../../../assets/logos/artisvisio.png';
+import majorLogo from '../../../assets/logos/major.png';
+import moiLogo from '../../../assets/logos/moiarchitekci.png';
+import Banner from '../../Elements/Banner';
+import './About.scss';
 
-import moiLogo from '../../../assets/logos/moiarchitekci.png'
-import amrestLogo from '../../../assets/logos/amrest.png'
-import archeLogo from '../../../assets/logos/arche.png'
-import majorLogo from '../../../assets/logos/major.png'
-import artisvisioLogo from '../../../assets/logos/artisvisio.png'
-import archilupusLogo from '../../../assets/logos/archilupus.png'
-import archilabLogo from '../../../assets/logos/archilab.png'
 
-import { Helmet } from 'react-helmet'
 
 
 const clients = [

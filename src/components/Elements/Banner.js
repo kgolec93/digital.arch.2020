@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import './Banner.scss'
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import React, { Component } from 'react';
+import { animateScroll as scroll } from 'react-scroll';
+import './Banner.scss';
 
 export class Banner extends Component {
     constructor(){

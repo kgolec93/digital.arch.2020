@@ -38,13 +38,14 @@
       transition: max-height 0.4s ease-in-out;
       p.answer {
       text-align: left;
-
+        color: #3b3a49a1;
+        // background-color: #3b3a49;
         transform-origin: top;
         transform: scaleY(0);
         transition: transform 0.4s ease-in-out;
-        width: 70vw;
+        width: 100%;
         margin: auto;
-        padding: 24px 0px;
+        padding: 24px 100px;
         font-family: "Open Sans", sans-serif;
         font-weight: 100;
       }
@@ -53,6 +54,10 @@
 }
 
 @media only screen and (max-width: 1200px) {
+  h5.question {
+    padding: 16px !important;
+    font-size: 1.4rem !important;
+  }
     p.answer {
         width: 100vw !important;
         padding: 16px !important;

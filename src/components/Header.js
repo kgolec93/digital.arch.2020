@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
-import mobileMenu from '../assets/misc/mobile-menu.svg'
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import mobileMenu from '../assets/misc/mobile-menu.svg';
 
 const sections = [
     {
@@ -38,10 +38,8 @@ export class Header extends Component {
     }
 
     listenToScroll = () => {
-        if (window.pageYOffset >= window.innerHeight - 68) {
+        if (window.pageYOffset >= window.innerHeight - 72) {
             this.setState({ headerIsStatic: true })
-            console.log('works')
-
         }
         else {
             this.setState({ headerIsStatic: false })
@@ -85,7 +83,7 @@ export class Header extends Component {
                     <ul className='webMenu'>
                         {sections.map(item=>{
                             return(
-                                <li><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to={item.link}>{item.name}</NavLink></li>
+                                <li key={item.name}><NavLink onClick={this.toggleMenu} activeClassName='navLinkActive' to={item.link}>{item.name}</NavLink></li>
                             )
                         })}
                         {/* <li className="langSelection">ENG</li> */}

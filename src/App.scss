@@ -425,6 +425,9 @@ footer {
           }
           .navLinkActive {
             border: none;
+            &::after {
+              display: none;
+            }
           }
           border-radius: 0;
           width: 100%;

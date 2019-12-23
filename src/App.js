@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
+import { Link, Route } from 'react-router-dom';
 import './App.scss';
-import ContactItems from './components/ContactItems'
-import Header from './components/Header'
-import { Link, Switch, Route } from 'react-router-dom'
-import Offer from './components/Pages/Offer/Offer'
-import Portfolio from './components/Pages/Portfolio/Portfolio'
-import { sections } from './components/Pages/Offer/Offer'
+import ContactItems from './components/ContactItems';
+import Header from './components/Header';
 import { About } from './components/Pages/About/About';
 import { Contact } from './components/Pages/Contact/Contact';
 import { FAQ } from './components/Pages/FAQ/FAQ';
+import Offer from './components/Pages/Offer/Offer';
+import Portfolio from './components/Pages/Portfolio/Portfolio';
 
 export const Footer = (props) => {
   return (

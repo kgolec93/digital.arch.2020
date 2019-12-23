@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import './Portfolio.scss'
-import { v1 as uuidv1 } from 'uuid';
+import React, { Component } from 'react';
+import { Swipeable } from 'react-swipeable';
 import { CSSTransition } from 'react-transition-group';
-import arrow from '../../../assets/misc/arrow.svg'
-import close from '../../../assets/misc/close.svg'
-import { useSwipeable, Swipeable } from 'react-swipeable'
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import arrow from '../../../assets/misc/arrow.svg';
+import close from '../../../assets/misc/close.svg';
+import './Portfolio.scss';
 
 const images = [
     {
@@ -284,7 +283,7 @@ export class PortfolioItems extends Component {
             this.changeImage('next');
         }
         else if (e.keyCode === 27) {
-            this.setState({isLightboxOpen: false, activeImage: 0 });
+            this.setState({ isLightboxOpen: false, activeImage: 0 });
         }
         else if (e.keyCode === 38 || e.keyCode === 40) {
             e.preventDefault();
@@ -296,7 +295,11 @@ export class PortfolioItems extends Component {
             <div key={this.props.uuid} className={`portfolio-${this.props.active}-container portfolioItemsContainer`}>
                 {this.state.images.map(i => {
                     return (
-                        <div onClick={() => this.openLightbox(this.state.images.indexOf(i))} className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`} >
+                        <div
+                            onClick={() => this.openLightbox(this.state.images.indexOf(i))}
+                            className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`}
+                            key={i.url}
+                        >
                             <img src={i.url} alt={i.url} />
                         </div>
                     )
@@ -323,8 +326,8 @@ export class PortfolioItems extends Component {
                             <img onClick={() => this.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
                             <img onClick={() => this.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
                             <img onClick={() => this.setState({ isLightboxOpen: false, activeImage: 0 })} src={close} alt="close" id='close' className='exclude' />
-                        </Swipeable>   
-                        <input type="text" ref='input' onChange={this.handleKeyPress}/>
+                        </Swipeable>
+                        <input type="text" ref='input' onChange={this.handleKeyPress} />
 
                     </div>
                 </CSSTransition>

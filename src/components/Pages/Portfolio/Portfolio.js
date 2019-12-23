@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import Banner from '../../Elements/Banner'
-import './Portfolio.scss'
-import PortfolioItems from './PortfolioItems'
+import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import { v1 as uuidv1 } from 'uuid';
-import banner02 from '../../../assets/img/banner02.jpg'
-import { Helmet } from 'react-helmet'
+import banner02 from '../../../assets/img/banner02.jpg';
+import Banner from '../../Elements/Banner';
+import './Portfolio.scss';
+import PortfolioItems from './PortfolioItems';
 
 const menuItems = [
     {
@@ -60,7 +60,10 @@ export class Portfolio extends Component {
                                         window.scrollTo(0, window.innerHeight - 68)
                                         this.setState({ active: e.target.id, uuid: uuidv1() });
                                     }}
-                                >{i.name}</li>
+                                    key={i.id}
+                                >
+                                    {i.name}
+                                </li>
                             )
                         })}
                     </ul>

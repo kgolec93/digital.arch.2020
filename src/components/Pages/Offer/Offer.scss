@@ -8,15 +8,17 @@ $accentRed: #f35c2b;
     flex-direction: column;
     height: 100%;
     .offerSection {
-      min-height: 40vh;
+      min-height: 60vh;
       margin-top: 8px;
       flex: 1;
       position: relative;
-
-      &:nth-child(2n + 1) {
-        background-color: rgb(126, 126, 126);
+      &:nth-child(4) {
+        img {
+          object-position: 50% 100% !important;
+        }
       }
       .offerItem {
+
         position: absolute;
         top: 0;
         left: 0;

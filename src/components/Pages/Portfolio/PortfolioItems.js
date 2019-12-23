@@ -35,18 +35,14 @@ class Lightbox extends Component {
                 >
 
                     <img
-                        ref='lightboxOverlayRef'
-                        onKeyDown={() => console.log('lightbox-hit')}
                         src={this.props.images[this.props.activeImage].url}
                         alt={this.props.images.alt}
                     />
                     <img onClick={() => this.props.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
                     <img onClick={() => this.props.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
                     <img onClick={() => this.props.closeLightbox()} src={close} alt="close" id='close' className='exclude' />
-                    <p><img src={swipe} alt="swipe"/>swipe to change images</p>
+                    <p><img src={swipe} alt="swipe"/>przesuń palcem żeby przewinąć</p>
                 </Swipeable>
-                {/* <input type="text" ref='input' onChange={this.handleKeyPress} /> */}
-
             </div>
         )
     }

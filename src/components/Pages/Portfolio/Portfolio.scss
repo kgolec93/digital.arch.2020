@@ -118,6 +118,9 @@ $accentRed: #f35c2b;
       background-color: #030303d2;
       z-index: 200;
       margin: 0px !important;
+      &:focus {
+        outline: none;
+      }
       input {
         opacity: 0;
         position: fixed;
@@ -523,13 +526,14 @@ $accentRed: #f35c2b;
         width: 20px !important;
       }
       .arrow {
-        height: 30px !important;
-        &#left {
-          left: 12px !important;
-        }
-        &#right {
-          right: 12px !important;
-        }
+        display: none;
+        // height: 30px !important;
+        // &#left {
+        //   left: 12px !important;
+        // }
+        // &#right {
+        //   right: 12px !important;
+        // }
       }
       p {
         position: absolute;

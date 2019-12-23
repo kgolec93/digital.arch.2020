@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import arrow from '../../../assets/misc/arrow.svg'
 import close from '../../../assets/misc/close.svg'
 import { useSwipeable, Swipeable } from 'react-swipeable'
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
 const images = [
     {
@@ -227,8 +228,15 @@ export class PortfolioItems extends Component {
                     :
                     images
             })
-
         }
+        else if (this.state.isLightboxOpen === true) {
+            this.refs.input.focus();
+            disablePageScroll();
+        }
+        else if (this.state.isLightboxOpen === false) {
+            enablePageScroll();
+        }
+
     }
 
     listenToScroll = () => {
@@ -266,6 +274,23 @@ export class PortfolioItems extends Component {
 
     }
 
+    handleKeyPress = (e) => {
+        if (e.keyCode === 37) {
+            e.preventDefault();
+            this.changeImage('prev');
+        }
+        else if (e.keyCode === 39) {
+            e.preventDefault();
+            this.changeImage('next');
+        }
+        else if (e.keyCode === 27) {
+            this.setState({isLightboxOpen: false, activeImage: 0 });
+        }
+        else if (e.keyCode === 38 || e.keyCode === 40) {
+            e.preventDefault();
+        }
+    }
+
     render() {
         return (
             <div key={this.props.uuid} className={`portfolio-${this.props.active}-container portfolioItemsContainer`}>
@@ -284,7 +309,11 @@ export class PortfolioItems extends Component {
                     classNames="lightbox"
                     unmountOnExit
                 >
-                    <div className="lightboxOverlay">
+                    <div
+                        className="lightboxOverlay"
+                        ref='lightboxOverlay'
+                        onKeyDown={this.handleKeyPress}
+                    >
                         <Swipeable
                             onSwipedLeft={() => this.changeImage('next')}
                             onSwipedRight={() => this.changeImage('prev')}
@@ -293,8 +322,9 @@ export class PortfolioItems extends Component {
                             <img src={this.state.images[this.state.activeImage].url} alt={this.state.images.alt} />
                             <img onClick={() => this.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
                             <img onClick={() => this.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
-                            <img onClick={() => { this.setState({ isLightboxOpen: false }) }} src={close} alt="close" id='close' className='exclude' />
-                        </Swipeable>
+                            <img onClick={() => this.setState({ isLightboxOpen: false, activeImage: 0 })} src={close} alt="close" id='close' className='exclude' />
+                        </Swipeable>   
+                        <input type="text" ref='input' onChange={this.handleKeyPress}/>
 
                     </div>
                 </CSSTransition>

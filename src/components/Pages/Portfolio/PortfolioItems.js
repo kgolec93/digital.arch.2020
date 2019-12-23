@@ -36,7 +36,7 @@ class Lightbox extends Component {
 
                     <img
                         src={this.props.images[this.props.activeImage].url}
-                        alt={this.props.images.alt}
+                        alt={`wizualizacja-${this.props.images.alt}`}
                     />
                     <img onClick={() => this.props.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
                     <img onClick={() => this.props.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
@@ -148,7 +148,7 @@ export class PortfolioItems extends Component {
                             className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`}
                             key={i.url}
                         >
-                            <img src={i.url} alt={i.url} />
+                            <img src={i.url} alt={`wizualizacja-${i.url}`} />
                         </div>
                     )
                 })

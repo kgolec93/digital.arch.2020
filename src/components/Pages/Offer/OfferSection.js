@@ -22,7 +22,7 @@ export class OfferSection extends Component {
     render() {
         return (
             <div className='offerItem'>
-                <img src={this.props.data.img} alt={this.props.data.refName} />
+                <img src={this.props.data.img} alt={`wizualizacja-${this.props.data.refName}`} />
                 
                 <div className="wrapper">
 

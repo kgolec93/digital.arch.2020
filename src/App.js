@@ -8,6 +8,7 @@ import { Contact } from './components/Pages/Contact/Contact';
 import { FAQ } from './components/Pages/FAQ/FAQ';
 import Offer from './components/Pages/Offer/Offer';
 import Portfolio from './components/Pages/Portfolio/Portfolio';
+import { Helmet } from 'react-helmet'
 
 export const Footer = (props) => {
   return (
@@ -40,6 +41,11 @@ const Page404 = () => {
   return (
     [
       <div className="Wrapper404">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>404 | digital.ARCH wizualizacje</title>
+          <link rel="canonical" href="https://digitalarch.pl/404" />
+        </Helmet>
         <h1>404</h1>
         <p>Nie ma takiej strony w tej domenie :(</p>
         <Link to='/'>Wróć do strony głównej</Link>
@@ -74,7 +80,9 @@ export class App extends Component {
             <Route path='/faq'>
               <FAQ />
             </Route>
-            <Page404 />
+            <Route>
+              <Page404 />
+            </Route>
           </Switch>
 
         </main>

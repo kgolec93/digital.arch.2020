@@ -1,9 +1,10 @@
 $accentRed: #f35c2b;
 
 .offerContainer {
-  min-height: 100vh;
-  min-width: 100vw;
-  .offerItemsContainer {
+  
+
+  // min-width: 100vw;
+  .offerItemsContainer { 
     display: flex;
     flex-direction: column;
     height: 100%;

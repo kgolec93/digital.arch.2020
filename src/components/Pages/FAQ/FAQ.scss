@@ -38,14 +38,14 @@
       transition: max-height 0.4s ease-in-out;
       p.answer {
       text-align: left;
-        color: #f5f5f5;
-        background-color: #3b3a49;
+        color: #3b3a49a1;
+        // background-color: #3b3a49;
         transform-origin: top;
         transform: scaleY(0);
         transition: transform 0.4s ease-in-out;
-        width: 70vw;
+        width: 100%;
         margin: auto;
-        padding: 24px 0px;
+        padding: 24px 100px;
         font-family: "Open Sans", sans-serif;
         font-weight: 100;
       }

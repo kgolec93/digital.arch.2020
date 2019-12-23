@@ -25,12 +25,11 @@ export class LandingPage extends Component {
     return (
       <div className='bgSpaceStation'>
         <div className="windowContainer">
-          <h2>Fotorealizm to przeszłosć</h2>
-          <h3>Odkryj unikatowy styl digital.<span>ARCH</span></h3>
+          <h1>Wizualizacje architektoniczne dla najlepszych</h1>
+          <h2>Odkryj unikatowy styl digital.<span>ARCH</span></h2>
           <p>Jesteśmy studiem graficznym z Wrocławia. Nasza specjalność to wizualizacje 3d architektury i wnętrz, które wyznaczają nowy styl w branży. Zwiększymy Twoje szanse na triumf w ważnym konkursie, pomożemy sprzedać Twój projekt! Zaufaj nam i wynieś swój projekt na wyższy poziom!</p>
           <Link to='/offer'><button>Poznaj naszą ofertę!</button></Link>
         </div>
-        {/* <Footer landing='landingPageFooter'/> */}
       </div>
     )
   }
@@ -56,6 +55,9 @@ const Page404 = () => {
 }
 
 export class App extends Component {
+  componentDidMount() {
+    console.log('website developed by WEBBLE')
+  }
   render() {
     return (
       <div className='App'>

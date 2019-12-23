@@ -58,7 +58,7 @@ $accentRed: #f35C2B;
         width: 100%;
         height: 100%;
         background-color: #ffffff;
-        animation: fadeIn 1s ease-out forwards 0.2s;
+        animation: bannerFadeIn 1s ease-out forwards 0.2s;
     }
 }
 
@@ -70,7 +70,7 @@ $accentRed: #f35C2B;
     }
   }
   
-@keyframes fadeIn {
+@keyframes bannerFadeIn {
     to {
         background-color: #030303a1;
     }

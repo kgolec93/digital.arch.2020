@@ -25,7 +25,7 @@ export const sections = [
         name: 'Wizualizacje wnętrz',
         refName: 'wizInterior',
         img: INT,
-        description: `lorem ipsum (descritption of the interior to be added soon)`
+        description: `Kupiłeś mieszkanie i chcesz zobaczyć jak będzie wyglądać Twoje mieszkanie, ale architekci wnętrz mają zbyt wysokie ceny? Stworzymy dla Ciebie wizualizacje, które pozwolą Ci zobaczyć, czy meble, które podobają się Tobie, pasują do koloru ścian wybranego przez Twoją drugą połówkę. A może masz dylemat czy wybrać nowoczesną lampę, a może tradycyjny żyrandol z dużą ilością złota? Wizualizacje pomogą Ci rozwiać wszelkie wątpliwości. Możemy też coś doradzić w projekcie, żeby efekt finalny wyszedł jeszcze lepszy niż kiedykolwiek sobie wymarzyłeś!`
     },
     // {
     //     name: 'Wizualizacje deweloperskie',

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import mobileMenu from '../assets/misc/mobile-menu.svg';
+import logo from '../assets/misc/digitalarch-logo.svg'
 
 const sections = [
     {
@@ -60,14 +61,14 @@ export class Header extends Component {
             }>
                 <div className="logoContainer">
                     <a href='/'>
-                        <img src='https://www.digitalarch.pl/static/media/digitalarch-logo.232d5c1f.svg' alt="digital.ARCH logo" />
+                        <img src={logo} alt="digital.ARCH logo" />
                         digital.<span>ARCH</span>
                     </a>
 
                 </div>
                 <div className="headerBar">
                     <a id='logoMobile' href='/'>
-                        <img src='https://www.digitalarch.pl/static/media/digitalarch-logo.232d5c1f.svg' alt="digital.ARCH logo" />
+                        <img src={logo} alt="digital.ARCH logo" />
                         digital.<span>ARCH</span>
                     </a>
                     <img

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.digitalarch.pl/</loc>
+  <lastmod>2019-12-23T19:06:43+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.digitalarch.pl/offer/</loc>
+  <lastmod>2019-12-23T19:08:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.digitalarch.pl/portfolio/</loc>
+  <lastmod>2019-12-23T19:08:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.digitalarch.pl/about/</loc>
+  <lastmod>2019-12-23T19:06:41+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.digitalarch.pl/contact/</loc>
+  <lastmod>2019-12-23T19:08:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.digitalarch.pl/faq/</loc>
+  <lastmod>2019-12-23T19:07:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>

@@ -35,8 +35,13 @@ export class Portfolio extends Component {
         this.state = {
             pageOffset: window.pageYOffset,
             active: 'all',
-            uuid: ''
+            uuid: '',
+            isBannerLoaded: false
         }
+    }
+
+    bannerLoaded = () => {
+        this.setState({ isBannerLoaded: true })
     }
 
     render() {
@@ -47,7 +52,8 @@ export class Portfolio extends Component {
                     <title>portfolio | digital.ARCH wizualizacje</title>
                     <link rel="canonical" href="https://digitalarch.pl/portfolio" />
                 </Helmet>
-                <Banner section="Wybrane relizacje" button='Zobacz nasze portfolio' bgImage={banner02} />
+
+                <Banner bannerLoaded={this.bannerLoaded} section="Wybrane relizacje" button='Zobacz nasze portfolio' bgImage={banner02} />
 
                 <div className="portfolioMenu">
                     <ul>
@@ -69,8 +75,11 @@ export class Portfolio extends Component {
                     </ul>
 
                 </div>
-
-                <PortfolioItems uuid={this.state.active} active={this.state.active} />
+                {this.state.isBannerLoaded ?
+                    <PortfolioItems uuid={this.state.active} active={this.state.active} />
+                    :
+                    null
+                }
 
 
             </div>

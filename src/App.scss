@@ -67,10 +67,13 @@ a {
 header,
 footer {
   font-family: "Quicksand", sans-serif;
-  padding: 8px 96px;
   color: #f5f5f5;
   font-weight: 200;
   z-index: 90;
+  &:not(footer){
+    padding: 8px 96px;
+
+  }
 }
 
 header {
@@ -311,7 +314,7 @@ footer {
         img {
           display: inline-block;
           height: 20px;
-          margin: 12px;
+          margin-right: 12px;
         }
         a {
           &:hover {

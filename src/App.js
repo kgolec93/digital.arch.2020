@@ -9,6 +9,8 @@ import { FAQ } from './components/Pages/FAQ/FAQ';
 import Offer from './components/Pages/Offer/Offer';
 import Portfolio from './components/Pages/Portfolio/Portfolio';
 import { Helmet } from 'react-helmet'
+import { CSSTransition } from 'react-transition-group'
+import Cookies from './components/Elements/Cookies/Cookies'
 
 export const Footer = (props) => {
   return (
@@ -55,9 +57,34 @@ const Page404 = () => {
 }
 
 export class App extends Component {
-  componentDidMount() {
-    console.log('website developed by WEBBLE')
+
+  constructor() {
+    super();
+    this.state = {
+      cookiesAccepted: null
+    }
   }
+
+  componentDidMount() {
+    console.log('website developed by WEBBLE');
+    const cookiesAccepted = localStorage.getItem('digitalarch-cookiesAccepted');
+    const currentDate = Date.now();
+
+    if (cookiesAccepted) {
+      if (currentDate - cookiesAccepted < 604800000) {
+        this.setState({ cookiesAccepted: true });
+      }
+    }
+    else {
+      this.setState({ cookiesAccepted: false })
+    }
+  }
+
+  acceptCookies = () => {
+    this.setState({ cookiesAccepted: true });
+    localStorage.setItem("digitalarch-cookiesAccepted", Date.now());
+  }
+
   render() {
     return (
       <div className='App'>
@@ -86,8 +113,16 @@ export class App extends Component {
               <Page404 />
             </Route>
           </Switch>
-
         </main>
+        <CSSTransition
+          in={this.state.cookiesAccepted === false}
+          timeout={300}
+          classNames="cookies"
+          unmountOnExit>
+          <Cookies
+            acceptCookies={this.acceptCookies}
+          />
+        </CSSTransition>
         <Footer />
       </div>
     )

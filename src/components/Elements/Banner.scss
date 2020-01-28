@@ -1,88 +1,99 @@
-$accentRed: #f35C2B;
+$accentRed: #f35c2b;
 
 .bannerContainer {
-    color: #f5f5f5;
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  color: #f5f5f5;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .bannerHeader {
     position: relative;
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    top: -48px;
+    animation: landingText 1.5s normal forwards 0.9s;
+    opacity: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      font-family: "Quicksand", sans-serif;
+      font-weight: 100;
+      font-size: 4rem;
+      margin-bottom: 32px;
     }
-    .bannerHeader {
-        position: relative;
-        top: -48px;
-        animation: landingText 1.5s normal forwards 0.9s;
-        opacity: 0;
-        z-index: 100;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        h1 {
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 100;
-            font-size: 4rem;
-            margin-bottom: 32px;
-        }
-        div {
-            font-weight: 200;
-            border: 1px solid #f5f5f5;
-            border-radius: 4px;
-            padding: 16px 0px;
-            font-family: 'Raleway', sans-serif;
-            width: 70%;
-            font-size: 1.2rem;
-            transition: border 0.2s ease-in-out, color 0.2s ease-in-out; 
-            &:hover {
-                cursor: pointer;
-                border: 1px solid $accentRed;
-                color: $accentRed;
-            }
-        }
-    }
-
-    &::after {
-        content: "";
-        z-index: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #ffffff;
-        animation: bannerFadeIn 1s ease-out forwards 0.2s;
-    }
-}
-
-
-@keyframes landingText {
-    to {
-      opacity: 1;
-      top: 0px;
+    div {
+      font-weight: 200;
+      border: 1px solid #f5f5f5;
+      border-radius: 4px;
+      padding: 16px 0px;
+      font-family: "Raleway", sans-serif;
+      width: 70%;
+      font-size: 1.2rem;
+      transition: border 0.2s ease-in-out, color 0.2s ease-in-out;
+      &:hover {
+        cursor: pointer;
+        border: 1px solid $accentRed;
+        color: $accentRed;
+      }
     }
   }
-  
-@keyframes bannerFadeIn {
-    to {
-        background-color: #030303a1;
+
+  &::after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    animation: bannerFadeIn 1s ease-out forwards 0.2s;
+  }
+}
+.react-parallax-background-children {
+    position: relative;
+    top: -50%;
+    // width: 130%;
+    // height: 130%;
+  .parallaxBG {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+    // height: 100%;
+    img {
+    //   width: 100%;
+    //   height: 100%;
+      object-fit: contain;
+      object-position: center center;
     }
+  }
+}
+
+@keyframes landingText {
+  to {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+@keyframes bannerFadeIn {
+  to {
+    background-color: #030303a1;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
-    .bannerContainer {
-        h1 {
-            font-size: 2.5rem !important;
-        }
-        div {
-            font-size: 1rem !important;
-        }
+  .bannerContainer {
+    h1 {
+      font-size: 2.5rem !important;
     }
+    div {
+      font-size: 1rem !important;
+    }
+  }
 }

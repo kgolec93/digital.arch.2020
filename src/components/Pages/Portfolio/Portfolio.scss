@@ -148,12 +148,12 @@ $accentRed: #f35c2b;
           position: absolute;
           top: 50%;
           &#left {
-            left: 32px;
+            left: 54px;
             transform-origin: center;
             transform: rotate(180deg);
           }
           &#right {
-            right: 32px;
+            right: 54px;
           }
           &:hover {
             cursor: pointer;

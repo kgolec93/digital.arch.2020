@@ -10,6 +10,13 @@ import swipe from '../../../assets/misc/swipe.svg'
 
 
 class Lightbox extends Component {
+    constructor() {
+        super();
+        this.state = {
+            isImageLoaded: false,
+        }
+    }
+
     componentDidMount() {
         this.refs.lightboxOverlayRef.focus();
         disablePageScroll();
@@ -21,6 +28,10 @@ class Lightbox extends Component {
         enablePageScroll();
     }
 
+    changeImage = () => {
+        this.setState({ isImageLoaded: false })
+    }
+
     render() {
         return (
             <div
@@ -30,6 +41,7 @@ class Lightbox extends Component {
                 onKeyDown={this.props.handleKeyPress}
             >
                 <Swipeable
+                    onSwiped={() => this.changeImage()}
                     onSwipedLeft={() => this.props.changeImage('next')} // 
                     onSwipedRight={() => this.props.changeImage('prev')} //
                 >
@@ -37,10 +49,44 @@ class Lightbox extends Component {
                     <img
                         src={this.props.images[this.props.activeImage].url}
                         alt={`wizualizacja-${this.props.images.alt}`}
+                        onLoad={() => this.setState({ isImageLoaded: true })}
+                        className={this.state.isImageLoaded ? 'loaded' : ''}
                     />
-                    <img onClick={() => this.props.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
-                    <img onClick={() => this.props.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
-                    <img onClick={() => this.props.closeLightbox()} src={close} alt="close" id='close' className='exclude' />
+                    {
+                        this.state.isImageLoaded ?
+                        null
+                        :
+                        <p>LOADING!!!!!</p>
+                    }
+
+                    <img
+                        onClick={() => {
+                            this.props.changeImage('prev');
+                            this.changeImage();
+                        }}
+                        src={arrow} alt="arrow"
+                        id='left'
+                        className="arrow exclude"
+                    />
+                    <img
+                        onClick={() => {
+                            this.props.changeImage('next');
+                            this.changeImage();
+                        }}
+                        src={arrow} alt="arrow"
+                        id='right'
+                        className="arrow exclude"
+                    />
+                    <img
+                        onClick={() => {
+                            this.props.closeLightbox();
+                            this.changeImage();
+
+                        }}
+                        src={close} alt="close"
+                        id='close'
+                        className='exclude'
+                    />
                     <p><img src={swipe} alt="swipe" />przesuń palcem żeby przewinąć</p>
                 </Swipeable>
             </div>

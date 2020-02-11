@@ -185,7 +185,16 @@ $accentRed: #f35c2b;
           height: 100%;
           width: 100%;
           object-fit: contain;
+          opacity: 0;
+          transform: scale(0);
+          transform-origin: center;
+          transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+          &.loaded {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
+
         .arrow {
           height: 40px;
           width: auto;
@@ -561,8 +570,13 @@ $accentRed: #f35c2b;
       &.portfolio-all-container {
         grid-template-rows: repeat(21, 30vw);
       }
-      & > div {
-        margin: 4px !important;
+      // & > div {
+      //   margin: 1px !important;
+      // }
+      .portfolioItem {
+        min-width: calc(33.3vw - 2px) !important;
+        min-height: calc(33.3vw - 2px) !important;
+        max-width: 33.3vw !important;
       }
       #close {
         top: 12px !important;

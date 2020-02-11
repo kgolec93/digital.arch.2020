@@ -41,7 +41,7 @@ class Lightbox extends Component {
                     <img onClick={() => this.props.changeImage('prev')} src={arrow} alt="arrow" id='left' className="arrow exclude" />
                     <img onClick={() => this.props.changeImage('next')} src={arrow} alt="arrow" id='right' className="arrow exclude" />
                     <img onClick={() => this.props.closeLightbox()} src={close} alt="close" id='close' className='exclude' />
-                    <p><img src={swipe} alt="swipe"/>przesuń palcem żeby przewinąć</p>
+                    <p><img src={swipe} alt="swipe" />przesuń palcem żeby przewinąć</p>
                 </Swipeable>
             </div>
         )
@@ -141,14 +141,18 @@ export class PortfolioItems extends Component {
     render() {
         return (
             <div key={this.props.uuid} className={`portfolio-${this.props.active}-container portfolioItemsContainer`}>
-                {this.state.images.map(i => {
+                {this.state.images.map((i, index) => {
                     return (
                         <div
-                            onClick={() => this.openLightbox(this.state.images.indexOf(i))}
-                            className={this.state.animateItems ? `portfolio-${this.props.active} portfolioAnim` : `portfolio-${this.props.active}`}
-                            key={i.url}
+                            onClick={() => {
+                                this.openLightbox(this.state.images.indexOf(i));
+                                console.log(index);
+                            }}
+                            className={this.state.animateItems ? `portfolioItem portfolioAnim` : `portfolioItem`}
+                            key={index}
+                            index={index}
                         >
-                            <img src={i.url} alt={`wizualizacja-${i.url}`} />
+                            <img src={i.min} alt={`${i.alt}`} />
                         </div>
                     )
                 })
@@ -160,9 +164,9 @@ export class PortfolioItems extends Component {
                     classNames="lightbox"
                     unmountOnExit
                 >
-                    <Lightbox 
+                    <Lightbox
                         changeImage={this.changeImage}
-                        closeLightbox={()=>this.setState({ isLightboxOpen: false, activeImage: 0 })}
+                        closeLightbox={() => this.setState({ isLightboxOpen: false, activeImage: 0 })}
                         images={this.state.images}
                         activeImage={this.state.activeImage}
                         handleKeyPress={this.handleKeyPress}

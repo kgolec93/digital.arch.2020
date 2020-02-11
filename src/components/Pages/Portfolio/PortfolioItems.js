@@ -7,7 +7,7 @@ import close from '../../../assets/misc/close.svg';
 import './Portfolio.scss';
 import images from './data'
 import swipe from '../../../assets/misc/swipe.svg'
-
+import loader from '../../../assets/svg/Triangles-1s-200px.svg'
 
 class Lightbox extends Component {
     constructor() {
@@ -54,9 +54,13 @@ class Lightbox extends Component {
                     />
                     {
                         this.state.isImageLoaded ?
-                        null
-                        :
-                        <p>LOADING!!!!!</p>
+                            null
+                            :
+                            <img
+                                src={loader}
+                                alt="loading"
+                                className='loader exclude'
+                            />
                     }
 
                     <img

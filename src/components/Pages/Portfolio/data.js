@@ -84,7 +84,7 @@ export const images = [
         type: 'arch',
     },
     {
-        url: img02,
+        url: 'https://vastphotos.com/files/uploads/photos/10273/high-resolution-milky-way-xl.jpg',
         min: img02_min,
         alt: 'alt1',
         type: 'arch',

@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import './LandingPage.scss'
-import bannerImage from '../../../assets/landing-page/banner_image.png'
+import bannerImage from '../../../assets/landing-page/banner_image.jpg'
 import logo from '../../../assets/landing-page/digitalarch-logo-white.svg'
 import { animateScroll as scroll } from 'react-scroll';
 import { Link } from 'react-router-dom'
-import img01 from '../../../assets/landing-page/img01.png'
+import img01 from '../../../assets/landing-page/img01.jpg'
 
-import offer01 from '../../../assets/landing-page/offer01.png'
-import offer02 from '../../../assets/landing-page/offer02.png'
-import offer03 from '../../../assets/landing-page/offer03.png'
+import offer01 from '../../../assets/landing-page/offer01.jpg'
+import offer02 from '../../../assets/landing-page/offer02.jpg'
+import offer03 from '../../../assets/landing-page/offer03.jpg'
 
-import about from '../../../assets/landing-page/about.png'
+import about from '../../../assets/landing-page/about.jpg'
 
 import PortfolioItems from '../Portfolio/PortfolioItems';
 
@@ -55,7 +55,7 @@ export class LandingPage extends Component {
         return (
             <div id='LandingPageContainer'>
                 <div ref='banner' className="jumbo">
-                    <img src={bannerImage} alt="Wizualizacje 3d" />
+                    <img src={bannerImage} alt="Wizualizacje 3d" className='logo' />
                     <div className="jumboContent">
                         <img src={logo} alt="digital.ARCH Wizualizacje 3d Wrocław" />
                         <h1>wizualizacje architektoniczne i grafika 3d</h1>
@@ -63,10 +63,12 @@ export class LandingPage extends Component {
                             dowiedz się więcej!
                         </p>
                     </div>
+
                     <ContactItems />
+
                 </div>
                 <div id="introSection">
-                    <div className="textContainer">
+                    <div className="textContainer content">
                         <h2>Wizualizacje 3d dla architektów i inwestorów</h2>
                         <h3>Odkryj unikatowy styl digital.ARCH</h3>
                         <p>
@@ -85,7 +87,7 @@ export class LandingPage extends Component {
                         offerItems.map((item, index) => {
                             return (
                                 <div key={`offer-${index}`} className="offerItem">
-                                    <div className="textContainer">
+                                    <div className="textContainer content">
                                         <h2>{item.header}</h2>
                                         <p>{item.text}</p>
                                     </div>
@@ -120,7 +122,7 @@ export class LandingPage extends Component {
                 <div className="aboutContainer">
                     <div className="left">
                         <img src={logo} alt="digital.ARCH Wizualizacje 3d Wrocław" />
-                        <p className='text'>
+                        <p className='text content'>
                             Jesteśmy studiem graficznym, znajdującym się we Wrocławiu. Oficjalnie w branży architektury i wizualizacji działamy od 2015 roku, choć z samą grafiką 3d mieliśmy już do czynienia dużo wcześniej. Grafika stała się naszą pasją, dzięki której każda z naszych realizacji jest na swój sposób wyjątkowa, ponieważ wkładamy w jej stworzenie całe nasze siły. Nie boimy się wyzwań, bo dzięki nim za każdym razem stajemy się coraz lepsi i możemy zapewnić każdej kolejnej pracy jeszcze wyższą jakość.
                         </p>
                         <h3>Skontaktuj się z nami!</h3>

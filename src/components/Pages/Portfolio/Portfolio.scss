@@ -580,9 +580,9 @@ $accentRed: #f35c2b;
       //   margin: 1px !important;
       // }
       .portfolioItem {
-        min-width: calc(33.3vw - 2px) !important;
+        min-width: calc(33.3% - 2px) !important;
         min-height: calc(33.3vw - 2px) !important;
-        max-width: 33.3vw !important;
+        max-width: 33.3% !important;
       }
       #close {
         top: 12px !important;

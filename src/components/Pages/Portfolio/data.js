@@ -82,42 +82,49 @@ export const images = [
         min: img01_min,
         alt: 'alt1',
         type: 'arch',
+        isOnLanding: true
     },
     {
-        url: 'https://vastphotos.com/files/uploads/photos/10273/high-resolution-milky-way-xl.jpg',
+        url: img02,
         min: img02_min,
         alt: 'alt1',
         type: 'arch',
+        isOnLanding: true
     },
     {
         url: img03,
         min: img03_min,
         alt: 'alt1',
         type: 'interior',
+        isOnLanding: true
     },
     {
         url: img04,
         min: img04_min,
         alt: 'alt1',
         type: 'arch',
+        isOnLanding: true
     },
     {
         url: img05,
         min: img05_min,
         alt: 'alt1',
         type: 'arch',
+        isOnLanding: true
     },
     {
         url: img06,
         min: img06_min,
         alt: 'alt1',
         type: 'special',
+        isOnLanding: true
     },
     {
         url: img07,
         min: img07_min,
         alt: 'alt1',
         type: 'interior',
+        isOnLanding: true
     },
     {
         url: img08,
@@ -142,6 +149,7 @@ export const images = [
         min: img11_min,
         alt: 'alt1',
         type: 'arch',
+        isOnLanding: true
     },
     {
         url: img12,
@@ -153,13 +161,14 @@ export const images = [
         url: img13,
         min: img13_min,
         alt: 'alt1',
-        type: 'special',
+        type: 'special'
     },
     {
         url: img14,
         min: img14_min,
         alt: 'alt1',
         type: 'arch',
+        isOnLanding: true
     },
     {
         url: img15,
@@ -238,6 +247,7 @@ export const images = [
         min: img27_min,
         alt: 'alt1',
         type: 'arch',
+        isOnLanding: true
     },
     {
         url: img28,
@@ -262,6 +272,7 @@ export const images = [
         min: img31_min,
         alt: 'alt1',
         type: 'interior',
+        isOnLanding: true
     },
     {
         url: img32,
@@ -280,6 +291,7 @@ export const images = [
         min: img34_min,
         alt: 'alt1',
         type: 'arch',
+        isOnLanding: true
     },
     {
         url: img35,

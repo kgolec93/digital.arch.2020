@@ -11,6 +11,7 @@ import Portfolio from './components/Pages/Portfolio/Portfolio';
 import { Helmet } from 'react-helmet'
 import { CSSTransition } from 'react-transition-group'
 import Cookies from './components/Elements/Cookies/Cookies'
+import LandingPage from './components/Pages/LandingPage/LandingPage'
 
 export const Footer = (props) => {
   return (
@@ -21,22 +22,22 @@ export const Footer = (props) => {
   )
 }
 
-export class LandingPage extends Component {
+// export class LandingPage extends Component {
 
-  render() {
-    return (
-      <div className='bgSpaceStation'>
-        <div className="windowContainer">
-          <h1>Wizualizacje architektoniczne dla najlepszych</h1>
-          <h2>Odkryj unikatowy styl digital.<span>ARCH</span></h2>
-          <p>Jesteśmy studiem graficznym z Wrocławia. Nasza specjalność to wizualizacje 3d architektury i wnętrz, które wyznaczają nowy styl w branży. Zwiększymy Twoje szanse na triumf w ważnym konkursie, pomożemy sprzedać Twój projekt! Zaufaj nam i wynieś swój projekt na wyższy poziom!</p>
-          <Link to='/offer'><button>Poznaj naszą ofertę!</button></Link>
-        </div>
-      </div>
-    )
-  }
+//   render() {
+//     return (
+//       <div className='bgSpaceStation'>
+//         <div className="windowContainer">
+//           <h1>Wizualizacje architektoniczne dla najlepszych</h1>
+//           <h2>Odkryj unikatowy styl digital.<span>ARCH</span></h2>
+//           <p>Jesteśmy studiem graficznym z Wrocławia. Nasza specjalność to wizualizacje 3d architektury i wnętrz, które wyznaczają nowy styl w branży. Zwiększymy Twoje szanse na triumf w ważnym konkursie, pomożemy sprzedać Twój projekt! Zaufaj nam i wynieś swój projekt na wyższy poziom!</p>
+//           <Link to='/offer'><button>Poznaj naszą ofertę!</button></Link>
+//         </div>
+//       </div>
+//     )
+//   }
 
-}
+// }
 
 const Page404 = () => {
   return (

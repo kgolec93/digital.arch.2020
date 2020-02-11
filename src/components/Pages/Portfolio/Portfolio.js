@@ -76,7 +76,10 @@ export class Portfolio extends Component {
 
                 </div>
                 {this.state.isBannerLoaded ?
-                    <PortfolioItems uuid={this.state.active} active={this.state.active} />
+                    <PortfolioItems
+                        uuid={this.state.active}
+                        active={this.state.active}
+                    />
                     :
                     null
                 }

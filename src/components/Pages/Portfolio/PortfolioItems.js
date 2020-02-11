@@ -118,6 +118,13 @@ export class PortfolioItems extends Component {
         if (window.pageYOffset >= window.innerHeight - 300) {
             this.setState({ animateItems: true })
         }
+        if (this.props.active === 'highlight') {
+            this.setState({
+                    images: images.filter((i) => {
+                        return i.isOnLanding === true
+                    })
+            })
+        }
     }
 
     componentDidUpdate(prevProps) {

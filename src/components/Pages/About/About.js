@@ -9,21 +9,22 @@ import archilupusLogo from '../../../assets/logos/archilupus.png';
 import artisvisioLogo from '../../../assets/logos/artisvisio.png';
 import majorLogo from '../../../assets/logos/major.png';
 import moiLogo from '../../../assets/logos/moiarchitekci.png';
+import igmLogo from '../../../assets/logos/igmarchitekci.svg';
 import Banner from '../../Elements/Banner';
 import './About.scss';
 
 
 
 
-const clients = [
+export const clients = [
     {
-        name: 'MOI Architekci',
+        name: 'IGM Architekci',
         url: 'http://www.moiarchitekci.pl/',
-        logo: moiLogo
+        logo: igmLogo
     },
     {
         name: 'AmRest',
-        url: '',
+        url: 'https://www.amrest.eu/pl',
         logo: amrestLogo
     },
     {
